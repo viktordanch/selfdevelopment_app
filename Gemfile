@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
+#Use heroku
 gem 'heroku'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -15,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+#Use haml
+gem 'haml-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -39,4 +42,13 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: [:production]
+
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'database_cleaner'
+  gem 'capybara', '~> 2.4.4'
+  gem 'shoulda-matchers', '2.6.2'
+  gem 'factory_girl_rails', '~> 4.5.0'
+end
 
