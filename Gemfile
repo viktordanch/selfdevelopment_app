@@ -52,5 +52,10 @@ group :test, :development do
   gem 'capybara', '~> 2.4.4'
   gem 'shoulda-matchers', '2.6.2'
   gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'konacha', '~> 3.3.0'
+  gem 'selenium-webdriver', '~> 2.44.0'
+  gem 'poltergeist'
+  gem 'sinon-rails'
+  gem 'sinon-chai-rails'
 end
 
