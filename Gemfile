@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# Use angular
+gem 'angularjs-rails', '~> 1.3.8'
 # Use foundation
 gem 'foundation-rails', '~> 5.5.0.0'
 # Use ActiveModel has_secure_password
