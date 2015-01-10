@@ -1,0 +1,15 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
+    %title= content_for?(:title) ? yield(:title) : "foundation-rails"
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    = yield
+
+    = stylesheet_link_tag 'vasiliy'
+    = javascript_include_tag 'vasiliy'
