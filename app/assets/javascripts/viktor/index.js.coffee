@@ -1,1 +1,4 @@
-console.log 'viktor'
+#= require_tree ./angular
+
+angular.module("todoApp", [])
+  .controller("HelloWorldController", window.HelloWorldController)
