@@ -1,5 +1,17 @@
 %h1 Viktor#index
 %p Find me in app/views/viktor/index.html.haml
 %div{ 'ng-controller' => 'HelloWorldController' }
-%input{ 'ng-model' => 'greeting.text' }
-%p {{greeting.text}}, World
+  %input{ 'ng-model' => 'greeting.text' }
+  %p {{greeting.text}}, World
+
+%div{ 'ng-controller' => 'CartController' }
+  %h1 Your Order
+  %div{ 'ng-repeat' => 'item in items' }
+    %span
+      {{item.title}}
+    %input{ 'ng-model' => 'item.quantity' }
+    %span
+      {{item.price | currency}}
+    %span
+      {{item.price * item.quantity | currency}}
+    %button{ 'ng-click' => 'remove($index)' } Remove
