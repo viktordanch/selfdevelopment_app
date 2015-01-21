@@ -13,7 +13,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require foundation
-#= require angular
+# require angular
 
 () ->
   $(document).foundation()
