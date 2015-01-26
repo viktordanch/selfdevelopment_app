@@ -2,7 +2,9 @@
   "name": "ExampleBowerApp",
   "version": "0.0.1",
   "dependencies": {
-    "foundation": "5.5.0"
+    "foundation": "5.5.0",
+    "backbone": null,
+    "underscore": null
   },
   "ignore": [
     "**/.*",

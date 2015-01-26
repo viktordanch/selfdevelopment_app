@@ -9,4 +9,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
-Rails.application.config.assets.precompile += %w(viktor.js viktor.css kris.js kris.css ihor.js ihor.css vasiliy.js vasiliy.css)
+Rails.application.config.assets.precompile += %w(viktor_backbone.js viktor.js viktor.css kris.js kris.css ihor.js ihor.css vasiliy.js vasiliy.css)

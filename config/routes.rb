@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get 'vasiliy', to: 'vasiliy#index'
 
   root 'welcome#index'
+
+  resource :users do
+    delete '/:id', to: 'users#destroy', on: :collection
+  end
 end
