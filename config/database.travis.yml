@@ -1,0 +1,4 @@
+test:
+  user: postgres
+  adapter: postgresql
+  database: selfdevelopment_app_test

@@ -1,0 +1,16 @@
+!!!
+%html{ lang: 'en', 'ng-app' => 'todoApp' }
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
+    %title= content_for?(:title) ? yield(:title) : 'Backbone'
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'modernizr/modernizr'
+    -#= javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    = yield
+
+    = stylesheet_link_tag 'viktor'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'viktor_backbone'
