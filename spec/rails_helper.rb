@@ -4,7 +4,12 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+CodeClimate::TestReporter.start do
+  formatter SimpleCov::Formatter::MultiFormatter[
+                SimpleCov::Formatter::HTMLFormatter,
+                CodeClimate::TestReporter::Formatter
+            ]
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

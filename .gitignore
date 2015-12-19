@@ -19,4 +19,3 @@ npm-debug.log
 
 .idea/
 config/database.yml
-db/schema.rb
