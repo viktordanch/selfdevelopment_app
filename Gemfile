@@ -48,6 +48,7 @@ gem 'rails_12factor', group: [:production]
 
 
 group :test, :development do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
   gem 'capybara', '~> 2.4.4'
