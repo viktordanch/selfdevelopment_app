@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         // download settings
         //jar_version: '2.44.0',
         jar_path: 'selenium-server-standalone-2.48.2.jar',
-        config_path: 'nightwatch.json',
+        config_path: 'nightwatch.json'
         //jar_url: 'http://domain.com/files/selenium-server-standalone-2.48.2.jar',
 
         // nightwatch settings

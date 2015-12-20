@@ -14,6 +14,7 @@ script:
   - bundle exec rspec spec
   - grunt
   - npm test
+  - eslint ./app/assets/javascripts/**/**/**/**/**/**
 addons:
   code_climate:
     repo_token: adf08323

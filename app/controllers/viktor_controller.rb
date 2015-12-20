@@ -4,6 +4,9 @@ class ViktorController < ApplicationController
   def index
   end
 
+  def california_birds
+  end
+
   def index_backbone
   end
 end

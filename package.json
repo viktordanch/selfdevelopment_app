@@ -23,6 +23,7 @@
     "chai": "^3.4.1",
     "grunt": "~0.4.5",
     "grunt-nightwatch": "^0.5.2",
+    "jslint": "^0.9.5",
     "mocha": "^2.3.4"
   }
 }
