@@ -1,9 +1,9 @@
 module.exports = {
     "rules": {
-        "indent": [
-            2,
-            "tab"
-        ],
+        //"indent": [
+        //    2,
+        //    "tab"
+        //],
         "quotes": [
             2,
             "double"
