@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 #Use heroku
@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 #Use haml
 gem 'haml-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -25,6 +26,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
+# <<<<<<< HEAD
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -46,18 +48,11 @@ gem 'angularjs-rails', '~> 1.3.8'
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: [:production]
 
-
 group :test, :development do
-  gem 'codeclimate-test-reporter', '~> 0.4.8', require: nil
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
   gem 'capybara', '~> 2.4.4'
   gem 'shoulda-matchers', '2.6.2'
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'konacha', '~> 3.3.0'
-  gem 'selenium-webdriver', '~> 2.44.0'
-  gem 'poltergeist'
-  gem 'sinon-rails'
-  gem 'sinon-chai-rails'
 end
 
