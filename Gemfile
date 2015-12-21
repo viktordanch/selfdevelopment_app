@@ -44,7 +44,9 @@ gem 'angularjs-rails', '~> 1.3.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
+# Use puma for heroku
+gem 'puma'
+
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: [:production]
 
