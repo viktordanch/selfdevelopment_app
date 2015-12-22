@@ -7,6 +7,9 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
-
-Rails.application.config.assets.precompile += %w(viktor_backbone.js viktor.js viktor.css kris.js kris.css ihor.js ihor.css vasiliy.js vasiliy.css)
+Rails.application.config.assets.precompile += %w(kris.js kris.css)
+Rails.application.config.assets.precompile += %w(ihor.js ihor.css)
+Rails.application.config.assets.precompile += %w(vasiliy.js vasiliy.css)
+Rails.application.config.assets.precompile += %w(modernizr.js)
+Rails.application.config.assets.precompile += %w(viktor_backbone.js viktor.js viktor.css)
+Rails.application.config.assets.precompile += %w( my_shop_b.js)

@@ -2,9 +2,15 @@
   "name": "ExampleBowerApp",
   "version": "0.0.1",
   "dependencies": {
-    "foundation": "5.5.0",
-    "backbone": null,
-    "underscore": null
+    "backbone" : "latest",
+    "jquery" : "latest",
+    "underscore" : "latest"
+  },
+  "install" : {
+    "path"  : {
+      "js": "app/assets/javascripts/sources",
+      "css": "app/assets/stylesheets/sources"
+    }
   },
   "ignore": [
     "**/.*",

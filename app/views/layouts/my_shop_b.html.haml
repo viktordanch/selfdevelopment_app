@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'UTF-8' }
+    %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
+
+    %title= content_for?(:title) ? yield(:title) : 'My Shop'
+
+    -#= render partial: '/layouts/favicon_link'
+
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
+    -#= meta_keywords
+    -#= meta_description
+    -#= meta_title
+    
+    -#= stylesheet_link_tag 'arbs', media: 'all'
+    = requirejs_include_tag 'my_shop_b'
+    = csrf_meta_tags
+
+    - if content_for(:head)
+      = yield(:head)
+  %body{ id: content_for?(:body_id) ? yield(:body_id) : '' }
+    = yield

@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resource :users do
     delete '/:id', to: 'users#destroy', on: :collection
   end
+
+  namespace :my_shop_b do
+    root 'index#landing'
+  end
 end

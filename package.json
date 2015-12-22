@@ -25,5 +25,8 @@
     "grunt-nightwatch": "^0.5.2",
     "mocha": "^2.3.4",
     "eslint": "^1.10.3"
+  },
+  "dependencies": {
+    "bower-installer": "^1.2.0"
   }
 }
