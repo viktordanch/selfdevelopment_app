@@ -1,22 +1,15 @@
 modules:
   - name: 'my_shop_b'
-  - name: 'my_shop_a'
-  - name: 'my_shop_e'
-  - name: 'my_shop_r'
 
 paths:
   my_shop_b: my_shop_b
   jquery: 'sources/jquery/jquery'
   backbone: 'sources/backbone/backbone'
   underscore: 'sources/underscore/underscore'
-  hbs: 'sources/hbs',
+  hbs: 'sources/hbs'
   my_shop_b_router: 'viktor/my_shop_b/router'
   my_shop_b_controller: 'viktor/my_shop_b/controller'
   my_shop_b_base_view: 'viktor/my_shop_b/base/baseView'
-
-shim:
-  backbone:
-    deps: ['jquery', 'underscore']
 
 hbs:
   i18n: false
@@ -27,3 +20,7 @@ packages:
   - name: 'shop_b'
     location: 'viktor/my_shop_b/components/shop'
     main: 'index'
+
+shim:
+  backbone:
+    deps: ['jquery', 'underscore']
