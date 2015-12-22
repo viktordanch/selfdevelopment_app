@@ -30,10 +30,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', '1.6.1', group: :development
 
 # Use angular
-gem 'angularjs-rails', '~> 1.3.8'
+gem 'requirejs-rails', '~> 0.9.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,7 +45,7 @@ gem 'angularjs-rails', '~> 1.3.8'
 # gem 'capistrano-rails', group: :development
 
 # Use puma for heroku
-gem 'puma'
+gem 'puma', '2.15.3'
 
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: [:production]
