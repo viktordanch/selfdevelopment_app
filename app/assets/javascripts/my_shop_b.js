@@ -4,9 +4,13 @@ requirejs.config({
     backbone: 'sources/backbone/backbone',
     underscore: 'sources/underscore/underscore',
     hbs: 'sources/hbs',
+    text: 'sources/text',
+    precompiledTemplates: 'viktor/my_shop_b/precompiledTemplates',
     my_shop_b_router: 'viktor/my_shop_b/router',
     my_shop_b_controller: 'viktor/my_shop_b/controller',
-    my_shop_b_base_view: 'viktor/my_shop_b/base/baseView'
+    my_shop_b_base_view: 'viktor/my_shop_b/base/baseView',
+    my_shop_b_base_model: 'viktor/my_shop_b/base/baseModel',
+    my_shop_b_base_collection: 'viktor/my_shop_b/base/baseCollection'
   },
   packages: [
     {

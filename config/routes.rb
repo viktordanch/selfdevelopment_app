@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   namespace :my_shop_b do
     root 'index#landing'
+    resources :products, only: [:index]
   end
 end

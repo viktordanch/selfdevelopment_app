@@ -2,11 +2,13 @@
 
 define(function(require) {
   var indexView = require("./views/index");
-  var view;
+  var indexCollection = require("./collections/products");
+  var view, collection;
 
   return {
     init: function(){
-      view = new indexView({ el: ".shopContainer" });
+      collection = new indexCollection();
+      view = new indexView({ el: ".shopContainer", collection: collection });
     }
   }
 });

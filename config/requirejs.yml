@@ -7,9 +7,12 @@ paths:
   backbone: 'sources/backbone/backbone'
   underscore: 'sources/underscore/underscore'
   hbs: 'sources/hbs'
+  text: 'sources/text'
   my_shop_b_router: 'viktor/my_shop_b/router'
   my_shop_b_controller: 'viktor/my_shop_b/controller'
   my_shop_b_base_view: 'viktor/my_shop_b/base/baseView'
+  my_shop_b_base_model: 'viktor/my_shop_b/base/baseModel'
+  my_shop_b_base_collection: 'viktor/my_shop_b/base/baseCollection'
 
 hbs:
   i18n: false

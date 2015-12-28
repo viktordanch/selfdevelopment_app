@@ -50,6 +50,8 @@ gem 'puma', '2.15.3'
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: [:production]
 
+gem 'responders', '~> 2.0'
+
 group :test, :development do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
