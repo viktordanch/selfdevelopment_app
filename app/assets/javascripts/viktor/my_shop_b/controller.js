@@ -1,8 +1,8 @@
-define(function(require) {
+define(function (require) {
   var shopComponent = require('shop_b');
   return {
-    init: function(){
+    init: function () {
       shopComponent.init();
-    }
-  }
+    },
+  };
 });
