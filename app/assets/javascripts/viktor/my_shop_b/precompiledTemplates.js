@@ -9,7 +9,7 @@ define(function (require) {
     },
     getTemplates: function (template, key) {
       var _template = this.templates[key];
-      if(!_template) {
+      if (!_template) {
         _template = this.precompile(template);
         this.templates[key] = _template;
       }

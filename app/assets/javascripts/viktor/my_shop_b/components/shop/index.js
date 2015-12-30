@@ -1,14 +1,13 @@
-/*global define*/
-
-define(function(require) {
-  var indexView = require("./views/index");
-  var indexCollection = require("./collections/products");
-  var view, collection;
+define(function (require) {
+  var indexView = require('./views/index');
+  var indexCollection = require('./collections/products');
 
   return {
-    init: function(){
-      collection = new indexCollection();
-      view = new indexView({ el: ".shopContainer", collection: collection });
-    }
-  }
+    view: null,
+    collection: null,
+    init: function () {
+      this.collection = new indexCollection();
+      this.view = new indexView({ el: '.shopContainer', collection: this.collection });
+    },
+  };
 });
