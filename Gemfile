@@ -54,14 +54,10 @@ gem 'responders', '~> 2.0'
 
 group :test, :development do
   gem 'rubocop', require: false
+  gem 'haml-lint', require: false
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
   gem 'capybara', '~> 2.4.4'
   gem 'shoulda-matchers', '2.6.2'
   gem 'factory_girl_rails', '~> 4.5.0'
 end
-
-group :test do
-  gem 'haml-lint', require: false
-end
-

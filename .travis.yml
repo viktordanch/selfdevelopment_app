@@ -13,4 +13,4 @@ script:
   - npm test
   - npm run lint
   - bundle exec rubocop --config .rubocop.yml app/models/ app/controllers/ app/mailers/ spec/
-  - haml-lint app/views
+  - bundle exec haml-lint app/views/
