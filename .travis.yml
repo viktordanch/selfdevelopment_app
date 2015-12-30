@@ -14,3 +14,5 @@ script:
   - npm run lint
   - bundle exec rubocop --config .rubocop.yml app/models/ app/controllers/ app/mailers/ spec/
   - bundle exec haml-lint app/views/
+  - bundle exec brakeman -d
+  - bundle exec rails_best_practices .

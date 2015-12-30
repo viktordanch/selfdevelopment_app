@@ -53,8 +53,12 @@ gem 'rails_12factor', group: [:production]
 gem 'responders', '~> 2.0'
 
 group :test, :development do
+  # code style
+  gem 'brakeman', :require => false
+  gem "rails_best_practices"
   gem 'rubocop', require: false
   gem 'haml-lint', require: false
+
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
   gem 'capybara', '~> 2.4.4'
