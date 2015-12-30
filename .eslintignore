@@ -1,2 +1,6 @@
 **/*.coffee
 **/*.hbs
+
+# Ignore built files except build/index.js
+./app/assets/javascripts/sources
+# !build/index.js

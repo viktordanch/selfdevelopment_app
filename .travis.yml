@@ -3,19 +3,13 @@ rvm:
   - 2.2.3
 node_js:
   - "0.10"
-  - iojs
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
   - cp config/database.travis.yml config/database.yml
   - npm install
   - npm install -g grunt-cli
 script:
   - bundle exec rake db:create db:test:load
   - bundle exec rspec spec
-  - grunt
   - npm test
-  - eslint ./app/assets/javascripts/**/**/**/**/**/**
-addons:
-  code_climate:
-    repo_token: adf08323
+  - npm run lint
+  - rubocop

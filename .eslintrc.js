@@ -1,26 +1,14 @@
 module.exports = {
+    "extends": "airbnb/legacy",
     "rules": {
-        //"indent": [
-        //    2,
-        //    "tab"
-        //],
-        "quotes": [
-            2,
-            "double"
-        ],
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "semi": [
-            2,
-            "always"
-        ]
+        "func-names": 0,
+        "new-cap": 0
     },
     "env": {
-        "es6": true,
-        "node": true,
         "browser": true
     },
-    "extends": "eslint:recommended"
+    "globals": {
+        "$": true,
+        "define": true
+    }
 };
