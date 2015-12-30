@@ -61,3 +61,7 @@ group :test, :development do
   gem 'factory_girl_rails', '~> 4.5.0'
 end
 
+group :test do
+  gem 'haml-lint', require: false
+end
+
