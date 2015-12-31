@@ -1,3 +1,4 @@
+# Viktor
 class ViktorController < ApplicationController
   layout 'viktor_backbone', only: :index_backbone
 

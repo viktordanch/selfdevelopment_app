@@ -1,6 +1,10 @@
-class MyShopB::IndexController < ApplicationController
-  layout 'my_shop_b'
+# MyShopB
+class MyShopB
+  # IndexController
+  class IndexController < ApplicationController
+    layout 'my_shop_b'
 
-  def landing
+    def landing
+    end
   end
 end

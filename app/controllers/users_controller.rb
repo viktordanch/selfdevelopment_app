@@ -1,3 +1,4 @@
+# Users controller
 class UsersController < ApplicationController
   def destroy
     render json: 'ok'
