@@ -21,5 +21,6 @@ npm-debug.log
 .idea/
 config/database.yml
 config/application.yml
+config/initializers/secret_token.rb
 app/assets/javascripts/libs
 
