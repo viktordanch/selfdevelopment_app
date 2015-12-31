@@ -6,14 +6,13 @@
 
     %title= content_for?(:title) ? yield(:title) : 'My Shop'
 
-    -#= render partial: '/layouts/favicon_link'
+    -# = render partial: '/layouts/favicon_link'
 
     %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
-    -#= meta_keywords
-    -#= meta_description
-    -#= meta_title
-    
-    -#= stylesheet_link_tag 'arbs', media: 'all'
+    -# = meta_keywords
+    -# = meta_description
+    -# = meta_title
+    -# = stylesheet_link_tag 'arbs', media: 'all'
     = requirejs_include_tag 'my_shop_b'
     = csrf_meta_tags
 

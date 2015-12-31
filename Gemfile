@@ -52,6 +52,8 @@ gem 'rails_12factor', group: [:production]
 
 gem 'responders', '~> 2.0'
 
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
 group :test, :development do
   # code style
   gem 'brakeman', require: false

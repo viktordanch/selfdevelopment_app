@@ -1,5 +1,5 @@
 # MyShopB
-class MyShopB
+module MyShopB
   # ProductsController
   class ProductsController < ApplicationController
     layout 'my_shop_b'

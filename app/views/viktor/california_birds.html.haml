@@ -21,23 +21,38 @@
 .container.main
   %h2 California Gull
   .hero-shot
-    %a{  href: "http://www.flickr.com/photos/catlantis/5514922015/" }
-      %img.hero-img{ src: "http://farm6.staticflickr.com/5171/5514922015_bfeab78ce0_z.jpg" }
+    %a{ href: 'http://www.flickr.com/photos/catlantis/5514922015/' }
+    - href = 'http://farm6.staticflickr.com/5171/5514922015_bfeab78ce0_z.jpg'
+      %img.hero-img{ src: href }
     %p.caption
       Photo by
-      %a{ href: "http://www.flickr.com/photos/catlantis/5514922015/" }
+      %a{ href: 'http://www.flickr.com/photos/catlantis/5514922015/' }
       C.L. Maclay
   %section.content
-    %p CSS3 provides a much more powerful syntax that lets you filter style sheets on many more criteria. Rather than just a media type, you can specify a media query. A media query consists of a media type and one or more expressions. When evaluated, a media query resolves to either true or false. If true, the style sheet is applied.
-
-A media query can start with a Boolean operator. Starting with “not” would negate the query—like using the ! operator in JavaScript. Most commonly, you will start with the only operator. The only operator can’t be parsed by older browsers, effectively hiding the style sheet.
-
-Next comes a media type. There are ten media types in the CSS 2.1 spec, but only print and screen are widely supported. Following the media type you specify an expression. For the Birds of California site, we’ll change styles based on the screen width. This is accomplished with the width media feature. The width feature takes a value (specified in any valid CSS unit) for filtering purposes.
+    %p
+      CSS3 provides a much more powerful syntax that lets you filter style
+      sheets on many more criteria. Rather than just a media type, you can
+      specify a media query. A media query consists of a media type and one
+      or more expressions. When evaluated, a media query resolves to either
+      true or false. If true, the style sheet is applied.
+    %p
+      A media query can start with a Boolean operator. Starting with “not” would
+      negate the query—like using the ! operator in JavaScript. Most commonly,
+      you will start with the only operator. The only operator can’t be parsed
+      by older browsers, effectively hiding the style sheet.
+    %p
+      Next comes a media type. There are ten media types in the CSS 2.1 spec,
+      but only print and screen are widely supported. Following the media type
+      you specify an expression. For the Birds of California site, we’ll change
+      styles based on the screen width. This is accomplished with the width
+      media feature. The width feature takes a value (specified in any valid
+      CSS unit) for filtering purposes.
 
 %footer.container.ft
   %ul.foot-links
     %li
-      %a{ href: '/copyright' }&copy; 2012 Awesome Bird Foundation, All Rights Reserved
+      %a{ href: '/copyright' }
+        &copy; 2012 Awesome Bird Foundation, All Rights Reserved
     %li
       %a{ href: '/tos' }Terms of Service
 

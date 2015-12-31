@@ -1,5 +1,5 @@
 # MyShopB
-class MyShopB
+module MyShopB
   # IndexController
   class IndexController < ApplicationController
     layout 'my_shop_b'

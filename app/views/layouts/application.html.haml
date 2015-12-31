@@ -1,13 +1,14 @@
 !!!
 %html{ lang: 'en' }
   %head
-    %meta{ charset: "utf-8" }
+    %meta{ charset: 'utf-8' }
     %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
-    %meta{ name: "google-site-verification", content: "AeDTasbfkYNou5spQ_9PnqEVtDoaoTZrSBd1Q7qzxVY" }
-    %title= content_for?(:title) ? yield(:title) : 'foundation-rails'
-    = stylesheet_link_tag    'application'
-    = javascript_include_tag 'modernizr'
-    = javascript_include_tag 'application'
+    %meta{ name: 'google-site-verification',
+           content: 'AeDTasbfkYNou5spQ_9PnqEVtDoaoTZrSBd1Q7qzxVY' }
+    %title= content_for?(:title) ? (yield(:title)) : ('foundation-rails')
+    = stylesheet_link_tag('application')
+    = javascript_include_tag('modernizr')
+    = javascript_include_tag('application')
     = csrf_meta_tags
   %body
     = yield

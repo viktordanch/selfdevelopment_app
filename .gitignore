@@ -20,5 +20,6 @@ npm-debug.log
 
 .idea/
 config/database.yml
+config/application.yml
 app/assets/javascripts/libs
 
