@@ -5,8 +5,10 @@ requirejs.config({
     underscore: 'sources/underscore/underscore',
     hbs: 'sources/hbs',
     text: 'sources/text',
+    foundation: 'sources/foundation',
     precompiledTemplates: 'viktor/my_shop_b/precompiledTemplates',
     my_shop_b_router: 'viktor/my_shop_b/router',
+    foundation_setup: 'viktor/foundation_setup',
     my_shop_b_controller: 'viktor/my_shop_b/controller',
     my_shop_b_base_view: 'viktor/my_shop_b/base/baseView',
     my_shop_b_base_model: 'viktor/my_shop_b/base/baseModel',
@@ -23,6 +25,9 @@ requirejs.config({
   shim: {
     backbone: {
       deps: ['jquery', 'underscore']
+    },
+    foundation: {
+      deps: ['jquery']
     }
   }
 });

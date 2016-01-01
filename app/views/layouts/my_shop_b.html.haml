@@ -13,10 +13,15 @@
     -# = meta_description
     -# = meta_title
     -# = stylesheet_link_tag 'arbs', media: 'all'
-    = requirejs_include_tag 'my_shop_b'
+
+    = stylesheet_link_tag('shop_b')
+
     = csrf_meta_tags
 
     - if content_for(:head)
       = yield(:head)
   %body{ id: content_for?(:body_id) ? yield(:body_id) : '' }
     = yield
+
+    = requirejs_include_tag 'my_shop_b'
+
