@@ -22,8 +22,15 @@
   "homepage": "https://github.com/viktordanch/my_shop",
   "devDependencies": {
     "chai": "^3.4.1",
-    "mocha": "^2.3.4",
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^2.1.1"
+    "eslint-config-airbnb": "^2.1.1",
+    "jquery": "^2.1.4",
+    "karma": "^0.13.16",
+    "karma-phantomjs-launcher": "^0.2.2",
+    "mocha": "^2.3.4",
+    "phantomjs": "^1.9.19",
+    "requirejs": "^2.1.22",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
   }
 }

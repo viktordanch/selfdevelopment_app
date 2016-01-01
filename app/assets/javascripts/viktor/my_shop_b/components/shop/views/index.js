@@ -8,7 +8,6 @@ define(function (require) {
   require('text');
   require('foundation_setup');
 
-
   return baseView.extend({
     textTemplate: textTemplate,
     nestedView: itemView,

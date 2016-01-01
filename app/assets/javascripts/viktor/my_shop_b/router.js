@@ -7,8 +7,10 @@ define(function (require) {
       '*path': 'init',
     },
 
+    controller: controller,
+
     init: function () {
-      controller.init();
+      this.controller.init();
     },
   });
 });
