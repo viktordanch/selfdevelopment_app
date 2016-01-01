@@ -5,14 +5,14 @@ define(function (require) {
   var expect = chai.expect;
   var sinon = require('sinon');
   var router = require('my_shop_b_router');
-  //var shop_b = require('shop_b');
+  var shop_b = require('shop_b');
   var Backbone = require('backbone');
   var shopRoute = new router;
 
   chai.use(sinonChai);
-  //console.log(Backbone.View)
+  console.log(Backbone.View)
 
-  return describe('my_shop_b router', function () {
+  describe('my_shop_b router', function () {
     it('routes is instance or Backbone Router', function () {
       expect(shopRoute).to.be.an.instanceof(Backbone.Router);
     });
@@ -28,10 +28,12 @@ define(function (require) {
       expect(shopRoute.init).not.to.be.null;
       expect(typeof shopRoute.init).to.be.eq('function');
     });
-    //it('routes init function call controller init function', function () {
-    //  sinon.spy(shopRoute.controller, "init");
-    //  shopRoute.init();
-    //  expect(shopRoute.controller.init).to.have.been.calledOnce;
-    //});
+    it('routes init function call controller init function', function () {
+      sinon.spy(shopRoute.controller, "init");
+      shopRoute.controller.init = sinon.stub();
+      shopRoute.init();
+      expect(shopRoute.controller.init).to.have.been.calledOnce;
+      //shopRoute.controller.init.restore();
+    });
   });
 });

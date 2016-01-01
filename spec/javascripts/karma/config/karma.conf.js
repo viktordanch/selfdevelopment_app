@@ -5,18 +5,31 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: __dirname + '/../../../../',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'requirejs'],
+
+    plugins: [
+      'karma-mocha',
+      'karma-requirejs',
+      'karma-phantomjs-launcher'
+    ],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*Spec.js',
-      '"test/**/*Spec.js"'
+      {pattern: 'spec/javascripts/sample.spec.js', included: false},
+      {pattern: 'spec/javascripts/libs/**/*.js', included: false},
+      {pattern: 'app/assets/javascripts/**/*.js', included: false},
+      {pattern: 'app/assets/javascripts/**/*.hbs', included: false},
+      {pattern: 'spec/javascripts/shop_b/**/*.js', included: false},
+      {pattern: 'node_modules/chai/chai.js', included: false},
+      {pattern: 'node_modules/sinon/lib/sinon.js', included: false},
+      {pattern: 'node_modules/sinon-chai/lib/sinon-chai.js', included: false},
+      'spec/javascripts/require_js/test-main.js'
     ],
 
 
@@ -56,7 +69,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode

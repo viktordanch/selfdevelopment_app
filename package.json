@@ -4,7 +4,7 @@
   "description": "my shop",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -u bdd -R spec -t 500 --recursive",
+    "test": "node_modules/karma/bin/karma start spec/javascripts/karma/config/karma.conf.js --single-run",
     "lint": "./node_modules/.bin/eslint ./app/assets/javascripts/*/**"
   },
   "engines": {

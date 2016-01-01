@@ -6,7 +6,7 @@ define(function (require) {
   var textTemplate = require('text!./../templates/index.hbs');
   require('hbs');
   require('text');
-  require('foundation_setup');
+  // require('foundation_setup');
 
   return baseView.extend({
     textTemplate: textTemplate,
