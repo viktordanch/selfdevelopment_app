@@ -8,7 +8,7 @@ paths:
   underscore: 'sources/underscore/underscore'
   hbs: 'sources/hbs'
   text: 'sources/text'
-  foundation: 'sources/foundation.min'
+  foundation: 'sources/foundation'
   foundation_setup: 'viktor/foundation_setup'
   precompiledTemplates: 'viktor/my_shop_b/precompiledTemplates'
   my_shop_b_router: 'viktor/my_shop_b/router'
