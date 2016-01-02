@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     get '/term_of_use', to: 'index#term_of_use'
     resources :orders, only: [:index]
     resources :cart, only: [:index]
-    resources :products, only: [:index]
+
+    resources :products, only: [:index] do
+      get '/list', to: 'products#list', on: :collection
+    end
   end
 end

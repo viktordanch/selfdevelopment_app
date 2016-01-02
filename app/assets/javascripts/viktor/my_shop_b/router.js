@@ -4,13 +4,18 @@ define(function (require) {
   return Backbone.Router.extend({
 
     routes: {
+      'my_shop_b/:page': 'renderStaticPage',
       '*path': 'init',
     },
 
     controller: controller,
 
+    renderStaticPage: function (page) {
+      this.controller.init({ url: page });
+    },
+
     init: function () {
-      this.controller.init();
+      this.controller.init({ url: '/my_shop_b' });
     },
   });
 });

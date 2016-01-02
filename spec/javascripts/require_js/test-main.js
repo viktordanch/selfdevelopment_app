@@ -41,8 +41,18 @@ require.config({
             name: 'shop_b',
             location: '../app/assets/javascripts/viktor/my_shop_b/components/shop',
             main: 'index'
+        },
+        {
+            name: 'layoutComponent',
+            location: '../app/assets/javascripts/viktor/my_shop_b/components/layoutComponent',
+            main: 'index'
         }
     ],
+    shim: {
+        backbone: {
+            deps: ['jquery', 'underscore']
+        },
+    },
 
     // dynamically load all test files
     //deps: ['../javascripts/sample.spec'],

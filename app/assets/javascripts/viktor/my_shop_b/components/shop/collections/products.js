@@ -11,6 +11,6 @@ define(function (require) {
       this.trigger('afterParse', this.models);
     },
 
-    url: '/my_shop_b/products',
+    url: '/my_shop_b/products/list',
   });
 });

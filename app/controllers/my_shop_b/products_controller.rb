@@ -5,6 +5,13 @@ module MyShopB
     layout 'my_shop_b'
 
     def index
+      respond_to do |format|
+        format.js { render layout: false }
+        format.html
+      end
+    end
+
+    def list
       books = [1, 2, 3, 4].map do |n|
         { title: "book #{n}",
           description: "Some description for book #{n}",

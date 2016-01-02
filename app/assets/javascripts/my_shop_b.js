@@ -21,10 +21,21 @@ requirejs.config({
       name: 'shop_b',
       location: 'viktor/my_shop_b/components/shop',
       main: 'index'
+    },
+    {
+      name: 'layoutComponent',
+      location: 'viktor/my_shop_b/components/layoutComponent',
+      main: 'index'
     }
   ],
 
   shim: {
+    jquery: {
+      exports: '$'
+    },
+    underscore: {
+      exports: '_'
+    },
     backbone: {
       deps: ['jquery', 'underscore']
     },

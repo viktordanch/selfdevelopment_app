@@ -1,13 +1,13 @@
 define(function (require) {
   // var shopComponent = require('shop_b');
-  var navigationComponent = require('shop_b');
+  var navigationComponent = require('layoutComponent');
   return {
-    init_layout: function () {
-      this.layout_component.init();
+    init_layout: function (params) {
+      this.layout_component.init(params);
     },
     layout_component: navigationComponent,
-    init: function () {
-      this.init_layout();
+    init: function (params) {
+      this.init_layout(params);
       // shopComponent.init();
     },
   };
