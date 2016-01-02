@@ -5,12 +5,10 @@ define(function (require) {
   var expect = chai.expect;
   var sinon = require('sinon');
   var router = require('my_shop_b_router');
-  var shop_b = require('shop_b');
   var Backbone = require('backbone');
   var shopRoute = new router;
 
   chai.use(sinonChai);
-  console.log(Backbone.View)
 
   describe('my_shop_b router', function () {
     it('routes is instance or Backbone Router', function () {
@@ -33,7 +31,6 @@ define(function (require) {
       shopRoute.controller.init = sinon.stub();
       shopRoute.init();
       expect(shopRoute.controller.init).to.have.been.calledOnce;
-      //shopRoute.controller.init.restore();
     });
   });
 });

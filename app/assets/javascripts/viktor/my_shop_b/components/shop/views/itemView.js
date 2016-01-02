@@ -2,8 +2,8 @@ define(function (require) {
   var Backbone = require('backbone');
   var baseView = require('my_shop_b_base_view');
   var precompiledTemplates = require('precompiledTemplates');
-  var textTemplate = require('text!./../templates/item.hbs');
-  require('hbs');
+  var textTemplate = require('text!./../templates/item.handlebars');
+  //require('hbs');
   require('text');
 
   return baseView.extend({

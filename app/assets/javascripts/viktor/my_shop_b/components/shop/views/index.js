@@ -3,8 +3,8 @@ define(function (require) {
   var baseView = require('my_shop_b_base_view');
   var itemView = require('./itemView');
   var precompiledTemplates = require('precompiledTemplates');
-  var textTemplate = require('text!./../templates/index.hbs');
-  require('hbs');
+  var textTemplate = require('text!./../templates/index.handlebars');
+  //require('hbs');
   require('text');
   // require('foundation_setup');
 

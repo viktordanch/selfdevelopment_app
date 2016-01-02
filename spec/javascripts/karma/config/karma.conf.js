@@ -25,6 +25,7 @@ module.exports = function(config) {
       {pattern: 'spec/javascripts/libs/**/*.js', included: false},
       {pattern: 'app/assets/javascripts/**/*.js', included: false},
       {pattern: 'app/assets/javascripts/**/*.hbs', included: false},
+      {pattern: 'app/assets/javascripts/**/*.handlebars', included: false},
       {pattern: 'spec/javascripts/shop_b/**/*.js', included: false},
       {pattern: 'node_modules/chai/chai.js', included: false},
       {pattern: 'node_modules/sinon/lib/sinon.js', included: false},

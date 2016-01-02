@@ -6,10 +6,7 @@ paths:
   jquery: 'sources/jquery/jquery'
   backbone: 'sources/backbone/backbone'
   underscore: 'sources/underscore/underscore'
-  hbs: 'sources/hbs'
   text: 'sources/text'
-  foundation: 'sources/foundation'
-  foundation_setup: 'viktor/foundation_setup'
   precompiledTemplates: 'viktor/my_shop_b/precompiledTemplates'
   my_shop_b_router: 'viktor/my_shop_b/router'
   my_shop_b_controller: 'viktor/my_shop_b/controller'
@@ -30,5 +27,3 @@ packages:
 shim:
   backbone:
     deps: ['jquery', 'underscore']
-  foundation:
-    deps: ['jquery']

@@ -23,7 +23,8 @@ require.config({
         jquery: '../app/assets/javascripts/sources/jquery/jquery',
         underscore: '../app/assets/javascripts/sources/underscore/underscore',
         backbone: '../app/assets/javascripts/sources/backbone/backbone',
-        hbs: '../app/assets/javascripts/sources/hbs',
+        //hbs: '../app/assets/javascripts/sources/hbs',
+        handlebars: '../app/assets/javascripts/sources/handlebars',
         text: '../app/assets/javascripts/sources/text',
         foundation: '../app/assets/javascripts/sources/foundation',
         foundation_setup: '../app/assets/javascripts/viktor/foundation_setup',
@@ -33,7 +34,6 @@ require.config({
         my_shop_b_base_view: '../app/assets/javascripts/viktor/my_shop_b/base/baseView',
         my_shop_b_base_model: '../app/assets/javascripts/viktor/my_shop_b/base/baseModel',
         my_shop_b_base_collection: '../app/assets/javascripts/viktor/my_shop_b/base/baseCollection'
-        //baseModel: '../app/assets/javascripts/applications/arbs/base/ArbModelBackbone'
     },
 
     packages: [

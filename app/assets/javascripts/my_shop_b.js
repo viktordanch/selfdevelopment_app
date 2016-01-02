@@ -3,9 +3,11 @@ requirejs.config({
     jquery: 'sources/jquery/jquery',
     backbone: 'sources/backbone/backbone',
     underscore: 'sources/underscore/underscore',
-    hbs: 'sources/hbs',
+    //hbs: 'sources/hbs',
+    handlebars: 'sources/handlebars',
     text: 'sources/text',
-    foundation: 'sources/foundation',
+    //foundation: 'sources/foundation',
+    //modernizr: 'sources/modernizr',
     precompiledTemplates: 'viktor/my_shop_b/precompiledTemplates',
     my_shop_b_router: 'viktor/my_shop_b/router',
     foundation_setup: 'viktor/foundation_setup',
@@ -26,9 +28,9 @@ requirejs.config({
     backbone: {
       deps: ['jquery', 'underscore']
     },
-    foundation: {
-      deps: ['jquery']
-    }
+    //foundation: {
+    //  deps: ['jquery', 'modernizr']
+    //}
   }
 });
 

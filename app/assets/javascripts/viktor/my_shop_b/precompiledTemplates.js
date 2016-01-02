@@ -1,5 +1,5 @@
 define(function (require) {
-  var Handlebars = require('hbs/handlebars');
+  var Handlebars = require('handlebars');
 
   return {
     precompile: function (template) {

@@ -13,6 +13,8 @@
     -# = meta_description
     -# = meta_title
     -# = stylesheet_link_tag 'arbs', media: 'all'
+    %script{ src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' }
+    %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.1/foundation.js' }
 
     = stylesheet_link_tag('shop_b')
 
@@ -24,4 +26,8 @@
     = yield
 
     = requirejs_include_tag 'my_shop_b'
+    :javascript
+      $(function () {
+        $(document).foundation();
+      });
 
