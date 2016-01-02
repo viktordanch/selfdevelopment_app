@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   namespace :my_shop_b do
     root 'index#landing'
+    get '/about_us', to: 'index#about_us'
+    get '/contact_us', to: 'index#contact_us'
+    get '/term_of_use', to: 'index#term_of_use'
+    resources :orders, only: [:index]
+    resources :cart, only: [:index]
     resources :products, only: [:index]
   end
 end

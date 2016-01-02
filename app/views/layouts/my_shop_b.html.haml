@@ -13,8 +13,16 @@
     -# = meta_description
     -# = meta_title
     -# = stylesheet_link_tag 'arbs', media: 'all'
-    %script{ src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' }
-    %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.1/foundation.js' }
+    - cdn = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'
+    %script{ src: cdn }
+
+    - cdn = 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/'
+    - cdn += 'modernizr.min.js'
+    %script{ src: cdn }
+
+    - cdn = 'https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3'
+    - cdn += '/js/foundation.min.js'
+    %script{ src: cdn }
 
     = stylesheet_link_tag('shop_b')
 
@@ -23,9 +31,95 @@
     - if content_for(:head)
       = yield(:head)
   %body{ id: content_for?(:body_id) ? yield(:body_id) : '' }
+    %header
+      %nav.top-bar{ 'data-topbar' => '', role: 'navigation' }
+        / Title
+        %ul.title-area
+          %li.name
+            %h1
+              %a{ href: my_shop_b_root_path }
+                %img{ src: image_path('shop_b/logo.gif') }
+          / Mobile Menu Toggle
+          %li.toggle-topbar.menu-icon
+            %a{ href: '#' }
+              %span Menu
+        / Top Bar Section
+        %section.top-bar-section
+          / Top Bar Left Nav Elements
+          %ul.left
+            / Search | has-form wrapper
+            %li.has-form
+              .row.collapse
+                .large-8.small-9.columns
+                  %input{ placeholder: 'Find Stuff', type: 'text' }
+                .large-4.small-3.columns
+                  %a.alert.button.expand{ href: '#' } Search
+
+          / Top Bar Right Nav Elements
+          %ul.right
+            %li.divider
+            %li
+              %a{ href: my_shop_b_cart_index_path, title: 'My Cart' } My Cart
+            %li.divider
+            %li
+              %a{ href: my_shop_b_orders_path, title: 'My Orders' } My Orders
+            %li.divider
+            %li.has-dropdown.not-click
+              %a{ href: my_shop_b_products_path, title: 'Catalog' } Catalog
+              %ul.dropdown
+                %li.title.back.js-generated
+                  %h5
+                    %a{ href: 'javascript:void(0)' } Back
+                %li.parent-link.hide-for-medium-up
+                  %a.parent-link.js-generated{ href: '#' } Item 1
+                %li
+                  %label Level One
+                %li
+                  %a{ href: my_shop_b_products_path } Sub-item 1
+                %li
+                  %a{ href: my_shop_b_products_path } Sub-item 2
+                %li.divider
+                %li
+                  %a{ href: my_shop_b_products_path } Sub-item 3
+                %li.has-dropdown.not-click
+                  %a{ href: my_shop_b_products_path } Sub-item 4
+                  / Nested Dropdown
+                  %ul.dropdown
+                    %li.title.back.js-generated
+                      %h5
+                        %a{ href: 'javascript:void(0)' } Back
+                    %li.parent-link.hide-for-medium-up
+                      %a.parent-link.js-generated{ href: '#' } Sub-item 4
+                    %li
+                      %label Level Two
+                    %li
+                      %a{ href: my_shop_b_products_path } Sub-item 2
+                    %li
+                      %a{ href: my_shop_b_products_path } Sub-item 3
+                    %li
+                      %a{ href: my_shop_b_products_path } Sub-item 4
+                %li
+                  %a{ href: my_shop_b_products_path } Sub-item 5
+            %li.divider
+            %li.has-form.show-for-large-up
+              %a.button{ href: my_shop_b_orders_path, title: 'Sign Up' } Sign Up
+
     = yield
 
+    %footer.container.ft
+      %ul.foot-links
+        %li
+          %a{ href: my_shop_b_about_us_path, title: 'About Us' } About Us
+        %li
+          %a{ href: my_shop_b_contact_us_path, title: 'Contact Us' } Contact Us
+        %li
+          %a{ href: '#' }
+            &copy; 2012 IKEA, All Rights Reserved
+        %li
+          %a{ href: my_shop_b_term_of_use_path } Terms of Service
+
     = requirejs_include_tag 'my_shop_b'
+
     :javascript
       $(function () {
         $(document).foundation();

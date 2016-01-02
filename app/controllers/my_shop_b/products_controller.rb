@@ -14,7 +14,7 @@ module MyShopB
 
       respond_to do |format|
         format.js { render json: books.to_json }
-        format.html { render json: books.to_json }
+        format.html
       end
     end
   end
