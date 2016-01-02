@@ -28,9 +28,9 @@ define(function (require) {
     });
     it('routes init function call controller init function', function () {
       sinon.spy(shopRoute.controller, "init");
-      shopRoute.controller.init = sinon.stub();
       shopRoute.init();
       expect(shopRoute.controller.init).to.have.been.calledOnce;
+      shopRoute.controller.init.restore();
     });
   });
 });
