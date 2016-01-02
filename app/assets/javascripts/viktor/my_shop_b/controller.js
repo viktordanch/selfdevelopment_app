@@ -1,5 +1,5 @@
 define(function (require) {
-  var shopComponent = require('shop_b');
+  // var shopComponent = require('shop_b');
   var navigationComponent = require('shop_b');
   return {
     init_layout: function () {
@@ -8,7 +8,7 @@ define(function (require) {
     layout_component: navigationComponent,
     init: function () {
       this.init_layout();
-      //shopComponent.init();
-    }
+      // shopComponent.init();
+    },
   };
 });

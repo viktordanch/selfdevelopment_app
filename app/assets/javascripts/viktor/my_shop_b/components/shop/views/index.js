@@ -4,7 +4,7 @@ define(function (require) {
   var itemView = require('./itemView');
   var precompiledTemplates = require('precompiledTemplates');
   var textTemplate = require('text!./../templates/index.handlebars');
-  //require('hbs');
+  // require('hbs');
   require('text');
   // require('foundation_setup');
 
