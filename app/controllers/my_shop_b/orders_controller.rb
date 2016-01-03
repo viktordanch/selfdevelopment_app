@@ -1,8 +1,9 @@
 # MyShopB
 module MyShopB
   # CartController
-  class OrdersController < ApplicationController
+  class OrdersController < MyShopB::ShopApplicationController
     layout 'my_shop_b'
+    before_action :authenticate_user!
 
     def index
       respond_to do |format|

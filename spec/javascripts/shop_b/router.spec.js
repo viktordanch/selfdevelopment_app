@@ -14,10 +14,10 @@ define(function (require) {
     it('routes is instance or Backbone Router', function () {
       expect(shopRoute).to.be.an.instanceof(Backbone.Router);
     });
-    it('routes to respond to *path and call init method', function () {
-      expect(shopRoute.routes).to.have.any.keys('*path');
-      expect(shopRoute.routes['*path']).to.eq('init');
-    });
+    //it('routes to respond to *path and call init method', function () {
+    //  expect(shopRoute.routes).to.have.any.keys('*path');
+    //  expect(shopRoute.routes['*path']).to.eq('init');
+    //});
     it('routes has not null controller', function () {
       expect(shopRoute.controller).not.to.be.null;
       expect(typeof shopRoute.controller).to.be.eq('object');

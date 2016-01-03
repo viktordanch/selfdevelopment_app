@@ -1,6 +1,6 @@
 !!!
 %html
-  %head
+  %head.myShop
     %meta{ charset: 'UTF-8' }
     %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
 
@@ -31,6 +31,16 @@
     - if content_for(:head)
       = yield(:head)
   %body{ id: content_for?(:body_id) ? yield(:body_id) : '' }
+    .flashContainer
+      - if flash[:notice]
+        .alert-box.success.radius{ 'data-alert' => '' }
+          = flash[:notice].html_safe
+          %a.close{ href: '#' } &times;
+      - if flash[:alert]
+        .alert-box.alert.radius{ 'data-alert' => '' }
+          = flash[:alert].html_safe
+          %a.close{ href: '#' } &times;
+
     %header
       %nav.top-bar{ 'data-topbar' => '', role: 'navigation' }
         / Title
@@ -44,16 +54,17 @@
             %a{ href: '#' }
               %span Menu
         / Top Bar Section
-        %section.top-bar-section
+        %section.top-bar-section.topSearchForm
           / Top Bar Left Nav Elements
           %ul.left
             / Search | has-form wrapper
             %li.has-form
               .row.collapse
-                .large-8.small-9.columns
+                .large-10.small-10.columns
                   %input{ placeholder: 'Find Stuff', type: 'text' }
-                .large-4.small-3.columns
-                  %a.primary.button.expand{ href: '#' } Search
+                .large-2.small-2.columns
+                  %a.primary.button.expand{ href: '#' }
+                    %i.fi-magnifying-glass
 
           / Top Bar Right Nav Elements
           %ul.right
@@ -102,7 +113,13 @@
                   %a{ href: my_shop_b_products_path } Sub-item 5
             %li.divider
             %li.has-form.show-for-large-up
-              %a.button{ href: my_shop_b_orders_path, title: 'Sign Up' } Sign Up
+              - if current_user
+                = link_to 'Sign Out', destroy_user_session_path,
+                                       method: :delete,
+                                       class: 'button',
+                                       title: 'Sign Out'
+              - else
+                %a.button{ href: user_session_path, title: 'Sign Up' } Sign In
     .main
       = yield
 
@@ -119,6 +136,7 @@
           %a{ href: my_shop_b_term_of_use_path } Terms of Service
 
     = requirejs_include_tag 'my_shop_b'
+    = javascript_include_tag('application')
 
     :javascript
       $(function () {

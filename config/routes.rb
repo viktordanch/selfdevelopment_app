@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'welcome/index', to: 'welcome#index'
   get 'viktor', to: 'viktor#index'
   get 'viktor/california_birds', to: 'viktor#california_birds'
@@ -20,4 +22,8 @@ Rails.application.routes.draw do
       get '/list', to: 'products#list', on: :collection
     end
   end
+  devise_for :users, controllers: { sessions: 'my_shop_b/sessions',
+                                    registrations: 'my_shop_b/registrations',
+                                    confirmations: 'my_shop_b/confirmations',
+                                    passwords: 'my_shop_b/passwords' }
 end

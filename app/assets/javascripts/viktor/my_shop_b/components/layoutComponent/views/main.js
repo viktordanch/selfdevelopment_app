@@ -14,7 +14,21 @@ define(function (require) {
       'click header li a, footer a': 'navigateTo',
     },
 
+    checkUsersLink: function () {
+      if (location.href.match('\/users')) {
+        if (this.$el.find('.main').html().length < 10) {
+          this.renderStaticPage({ url: '/my_shop_b', skipChking: true });
+        }
+        return true;
+      }
+      return false;
+    },
+
     renderStaticPage: function (params) {
+      if (this.checkUsersLink(params) && !params.skipChking) {
+        return;
+      }
+
       this.model.goTo({ url: params.url }).then(
         function (response) {
           this.$el.find('.main').html(response);

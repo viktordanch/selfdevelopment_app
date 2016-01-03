@@ -54,6 +54,8 @@ gem 'responders', '~> 2.0'
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+gem 'devise', '~> 3.5', '>= 3.5.3'
+
 group :test, :development do
   # code style
   gem 'brakeman', require: false
@@ -66,4 +68,7 @@ group :test, :development do
   gem 'capybara', '~> 2.4.4'
   gem 'shoulda-matchers', '2.6.2'
   gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'letter_opener'
 end

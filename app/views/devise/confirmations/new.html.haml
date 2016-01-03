@@ -1,0 +1,21 @@
+- if resource.pending_reconfirmation?
+  - email = resource.unconfirmed_email
+- else
+  - email = resource.email
+.row
+  .large-offset-4.medium-offset-3.small-12.medium-6.large-4.columns.device_page
+    %h2 Resend confirmation instructions
+
+    = form_for(resource, as: resource_name,
+                         url: confirmation_path(resource_name),
+                         html: { method: :post }) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true, value: email
+        = input_errors(resource.errors, :email)
+
+      .actions
+        = f.submit 'Resend confirmation instructions',
+                   class: 'primary button expand'
+
+    = render 'devise/shared/links'

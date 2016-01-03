@@ -1,0 +1,27 @@
+.row
+  .large-offset-4.medium-offset-3.small-12.medium-6.large-4.columns.device_page
+    %h2 Sign up
+
+    = form_for(resource, as: resource_name,
+                         url: registration_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true
+        = input_errors(resource.errors, :email)
+
+      .field
+        = f.label :password
+        - if @minimum_password_length
+          %em "(#{@minimum_password_length} characters minimum)"
+        = f.password_field :password, autocomplete: 'off'
+        = input_errors(resource.errors, :password)
+
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off'
+        = input_errors(resource.errors, :password_confirmation)
+
+      .actions
+        = f.submit 'Sign up', class: 'primary button expand'
+
+    = render 'devise/shared/links'

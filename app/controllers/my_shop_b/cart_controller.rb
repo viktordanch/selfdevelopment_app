@@ -1,7 +1,7 @@
 # MyShopB
 module MyShopB
   # CartController
-  class CartController < ApplicationController
+  class CartController < MyShopB::ShopApplicationController
     layout 'my_shop_b'
 
     def index
