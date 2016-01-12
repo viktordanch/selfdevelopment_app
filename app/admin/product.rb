@@ -1,9 +1,11 @@
-ActiveAdmin.register Category do
+ActiveAdmin.register Product do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :category_name, :category_path, :file_url
+permit_params :product_sku, :manufacturer_name,
+              :product_name, :product_price, :published, :category_path,
+              :product_desc
 #
 # or
 #

@@ -1,9 +1,12 @@
 FactoryGirl.define do
   factory :product do
-    section nil
-    title 'MyString'
-    short_description 'MyText'
-    description ''
-    image 'MyString'
+    product_sku "MyString"
+    manufacturer_name "MyString"
+    product_name "MyString"
+    product_price "MyString"
+    published "MyString"
+    category_path "MyString"
+    file_url "MyString"
   end
+
 end
