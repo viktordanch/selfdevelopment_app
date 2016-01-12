@@ -1,0 +1,14 @@
+%h2
+  Import Categories
+
+  = semantic_form_for :dashboard, url: { action: :import_categories }, :html => {:multipart => true} do |f|
+    = file_field_tag :file
+    = submit_tag "Import"
+
+%h2
+  Import Products
+
+  = semantic_form_for :dashboard, url: { action: :import_products }, :html => {:multipart => true} do |f|
+    = file_field_tag :file
+    = submit_tag "Import"
+

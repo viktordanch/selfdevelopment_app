@@ -58,6 +58,8 @@ gem 'devise', '~> 3.5', '>= 3.5.3'
 
 gem 'activeadmin', '~> 1.0.0.pre2'
 
+gem 'roo', '~> 2.1.0'
+
 group :test, :development do
   # code style
   gem 'brakeman', require: false
