@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'kris', to: 'kris#index'
   get 'vasiliy', to: 'vasiliy#index'
 
+  get 'first', to: 'foundation_lessons#first'
+
   root 'welcome#index'
 
   namespace :my_shop_b do

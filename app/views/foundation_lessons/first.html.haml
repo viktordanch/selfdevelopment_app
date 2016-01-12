@@ -1,0 +1,377 @@
+- content_for :body_id do
+  first
+
+-#%h1 first
+
+-#.top-bar{ 'data-topbar' => '', role: 'navigation', 'data-options'=>"mobile_show_parent_link: true" }
+-#  %ul.title-area
+-#    %li.name
+-#      %span
+-#        %a Name
+-#    %li.toggle-topbar.menu-icon
+-#      %a
+-#        %span
+-#          Menu
+-#  %section.top-bar-section
+-#    %ul.right
+-#      %li
+-#        %a.left-off-canvas-toggle.menu-icon{ href: '', 'aria-expanded' => "false" }
+-#          %span
+-#            TAB
+-#      %li.active
+-#        %a Right Button Active
+-#      %li.has-dropdown.not-click
+-#        %a{ href: '#' } Right Button Dropdown
+-#
+-#        %ul.dropdown
+-#          %li
+-#            %label Level 1
+-#          %li
+-#            %a First link in dropdown
+-#          %li
+-#            %a First link in dropdown
+-#          %li.divider
+-#          %li
+-#            %a First link in dropdown
+-#          %li.has-dropdown.not-click
+-#            %a{ href: '#' } Right Button Dropdown
+-#
+-#            %ul.dropdown
+-#              %li
+-#                %label Level 2
+-#              %li
+-#                %a First link in dropdown
+-#              %li
+-#                %a First link in dropdown
+-#              %li.divider
+-#              %li
+-#                %a First link in dropdown
+-#              %li
+-#                %a First link in dropdown
+-#              %li
+-#                %a First link in dropdown
+-#          %li
+-#            %a First link in dropdown
+-#
+-#    %ul.left
+-#      %li
+-#        %a{ href: "#" } Left Nav Button
+-#.off-canvas-wrap{ 'data-offcanvas' => '' }
+-#  .inner-wrap
+-#    %a.left-off-canvas-toggle.menu-icon{ href: '', 'aria-expanded' => "false" }
+-#      %span
+-#        TAB
+-#
+-#    .aside.left-off-canvas-menu
+-#      %ul.off-canvas-list
+-#        %li
+-#          %label
+-#            First group
+-#          %a{ href: "#" }
+-#            aaa
+-#        %li
+-#          %a{ href: "#" }
+-#            bbb
+-#        %li
+-#          %a{ href: "#" }
+-#            ccc
+-#        %li
+-#          %label
+-#            Second group
+-#          %a{ href: "#" }
+-#            aaa
+-#        %li
+-#          %a{ href: "#" }
+-#            bbb
+-#        %li
+-#          %a{ href: "#" }
+-#            ccc
+-#
+-#    %a.exit-off-canvas
+
+.row
+  .column.small-24
+    .off-canvas-wrap{ 'data-offcanvas' => '' }
+      .inner-wrap
+        %nav.tab-bar
+          %section.left-small
+            %a.left-off-canvas-toggle.menu-icon
+              %span
+
+          %section.middle.tab-bar-section
+            %h1
+              Foundation
+          %section.right-small
+            %a.right-off-canvas-toggle.menu-icon
+              %span
+
+        %a.left-off-canvas-toggle{ href: '#' } Menu
+
+        %aside.left-off-canvas-menu
+          %ul.off-canvas-list
+            %li
+              %label Foundation
+            %li
+              %a{ href: '#' } Item 1
+            %li
+              %a{ href: '#' } Item 2
+            %li
+              %a{ href: '#' } Item 3
+        .row
+          .column.small-12
+            Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+            the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+            stable and powerful, it is slowly decaying in ways that parallel the decline of
+            the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+            developed psychohistory, a new field of science and psychology that equates all
+            possibilities in large societies to mathematics, allowing for the prediction of
+            future events.
+
+        .row#header
+          .small-24.columns.text-center
+            HEADER
+        .row#nav
+          .small-24.columns.text-center
+            Navigation
+
+        .row#content
+          .small-24.medium-24.columns
+            %h1
+              content
+            %p
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+            %p
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+            %p
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+            %p
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+        .row#footer
+          .small-24.columns.text-center
+            FOOter
+
+
+        %header
+          .logo.text-center
+            HEADER
+          %nav{ role: "navigation" }
+            Navigation
+        -#  .small-24.columns.text-center
+        -#
+        -#.row#nav
+        -#  .small-24.columns.text-center
+        -#
+        %main{ role: "main" }
+          %article
+            %h1
+              content
+            %p{ tabindex: "10" }
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+              %br
+              %a{ href: '#' }
+                Link
+            %p{ tabindex: "20" }
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+              %br
+              %a{ href: '#' }
+                Link
+            %p{ tabindex: "30" }
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+              %br
+              %a{ href: '#' }
+                Link
+            %p{ tabindex: "40" }
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor,
+              the capital of the 12,000-year-old Galactic Empire. Though the empire appears
+              stable and powerful, it is slowly decaying in ways that parallel the decline of
+              the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has
+              %br
+              %a{ href: '#' }
+                Link
+
+          %aside
+            %form
+              %h3 Signup form
+              %h6 Personal Information
+              %label
+                First name
+                %input{ type: 'text', autocomlete: 'on', name: 'first_name' }
+              %label
+                Last name
+                %input{ type: 'text', autocomlete: 'on', name: 'last_name' }
+              %label
+                Email
+                %input{ type: 'email', autocomlete: 'on', name: 'email' }
+              %h6 Access Information
+              %label.required
+                %span
+                  User name
+                %input{ type: 'text', autocomlete: 'on', name: 'name' }
+              %label.required
+                %span
+                  Password
+                %input{ type: 'password', autocomlete: 'off', name: 'password' }
+              %label
+                Bio
+                %textarea{ rows: "4", cols: "50" }
+              %label.required
+                %span
+                  Required fields
+              %button{ type: 'submit' }
+                Submit
+        %footer
+          .logo.text-center
+            FOOter
+
+        .row
+          .column.small-24
+            %table.container
+              %tr
+                %td
+                  %table.row
+                    %tr
+                      %td.wrapper.last
+                        %table.six.columns
+                          %tr
+                            %td CONTENT GOES HERE
+                            %td.expanded
+                  %table.row
+                    %tr
+                      %td.wrapper
+                        %table.six.columns
+                          %tr
+                            %td LEFT COL GOES HERE
+                            %td.expanded
+                      %td.wrapper.last
+                        %table.six.columns
+                          %tr
+                            %td RIGHT COL GOES HERE
+                            %td.expanded
+                  %table.row
+                    %tr
+                      %td.wrapper.last
+                        %table.twelve.columns
+                          %tr
+                            %td CALL TO ACTION GOES HERE
+                            %td.expanded
+
+        %a.exit-off-canvas{ href: '#' }
+
+.row
+  #masonry
+    #container
+      %ul#masonry-container.small-block-grid-4.medium-block-grid-8.large-block-grid-6
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+          %p ddd
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+          %p ccc
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+          %p ccc
+          %p ccc
+        %li
+          %p aaa
+          %p bbb
+          %p ccc
+          %p ccc
+
+#top2
+%nav.top-bar.vertical-dropdown{ 'data-topbar' => '', role: 'navigation' }
+  %ul.title-area
+    %li.name
+      %h1
+        %a{ href: "#" } My Site
+
+    %li.toggle-topbar.menu-icon
+      %a{ href: "#" }
+        %span Menu
+
+  %section.top-bar-section
+    %ul.right
+      %li.active
+        %a{ href: "#" } Right Button Active
+      %li.has-dropdown
+        %a{ href: "#" } Dropdown
+        %ul.dropdown
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+          %li
+            %a{ href: "#" }link
+
+    %ul.left
+      %li
+        %a{ href: "#" } Left Nav Button

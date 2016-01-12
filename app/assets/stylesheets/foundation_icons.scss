@@ -1,0 +1,14 @@
+$font-path: "fonts/foundation-icons/foundation-icons";
+
+@font-face {
+  font-family: "foundation-icons";
+  src: asset_path("#{$font-path}.eot");
+  src: asset_path("#{$font-path}.eot?#iefix") format("embedded-opentype"),
+  asset_path("#{$font-path}.woff") format("woff"),
+  asset_path("#{$font-path}.ttf") format("truetype"),
+  asset_path("#{$font-path}.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "fonts/foundation-icons/foundation-icons.css";

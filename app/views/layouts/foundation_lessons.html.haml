@@ -1,0 +1,42 @@
+!!!
+%html
+  %head.myShop
+    %meta{ charset: 'UTF-8' }
+    %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
+
+    %title= content_for?(:title) ? yield(:title) : 'My Shop'
+
+    -# = render partial: '/layouts/favicon_link'
+
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
+    -# = meta_keywords
+    -# = meta_description
+    -# = meta_title
+    -# = stylesheet_link_tag 'arbs', media: 'all'
+    - cdn = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'
+    %script{ src: cdn }
+
+    - cdn = 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/'
+    - cdn += 'modernizr.min.js'
+    %script{ src: cdn }
+
+    - cdn = 'https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3'
+    - cdn += '/js/foundation.min.js'
+    %script{ src: cdn }
+
+    = stylesheet_link_tag('foundation_lessons')
+
+    = csrf_meta_tags
+
+    :javascript
+      //new Orbit($el, $.extend({},self.settings, opts))._goto(slide_id);
+      $(function () {
+        $(document).foundation();
+      });
+
+    - if content_for(:head)
+      = yield(:head)
+  %body{ id: content_for?(:body_id) ? yield(:body_id) : '' }
+    = yield
+
+    = javascript_include_tag('foundation_lessons')

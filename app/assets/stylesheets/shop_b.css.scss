@@ -1,8 +1,4 @@
-@import "icomoon.css";
-@import "foundation-icons/foundation-icons.css";
-@import "foundation.css";
+@import "foundation_icons";
+@import "foundation/shop_b_settings.scss";
+@import "foundation.scss";
 @import "viktor/layout";
-
-.foundation-data-attribute-namespace {
-  font-family: false;
-}
