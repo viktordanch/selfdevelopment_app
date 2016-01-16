@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'vasiliy', to: 'vasiliy#index'
 
   get 'first', to: 'foundation_lessons#first'
+  get 'second', to: 'foundation_lessons#second'
 
   root 'welcome#index'
 
