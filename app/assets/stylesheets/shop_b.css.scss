@@ -3,6 +3,23 @@
 @import "foundation.css";
 @import "viktor/layout";
 
-.foundation-data-attribute-namespace {
-  font-family: false;
+html, body, .main {
+  height: 100%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.main {
+  padding-top: 45px;
+  margin-bottom: -33px;
+}
+
+footer {
+  .panel {
+    margin-bottom: 0px;
+    padding: 3px;
+  }
 }

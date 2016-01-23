@@ -124,16 +124,17 @@
       = yield
 
     %footer.container.ft
-      %ul.foot-links
-        %li
-          %a{ href: my_shop_b_about_us_path, title: 'About Us' } About Us
-        %li
-          %a{ href: my_shop_b_contact_us_path, title: 'Contact Us' } Contact Us
-        %li
-          %a{ href: '#' }
-            &copy; 2012 IKEA, All Rights Reserved
-        %li
-          %a{ href: my_shop_b_term_of_use_path } Terms of Service
+      .panel
+        %ul.foot-links.inline-list
+          %li
+            %a{ href: my_shop_b_about_us_path, title: 'About Us' } About Us
+          %li
+            %a{ href: my_shop_b_contact_us_path, title: 'Contact Us' } Contact Us
+          %li
+            %a{ href: '#' }
+              &copy; 2012 IKEA, All Rights Reserved
+          %li
+            %a{ href: my_shop_b_term_of_use_path } Terms of Service
 
     = requirejs_include_tag 'my_shop_b'
     = javascript_include_tag('application')
