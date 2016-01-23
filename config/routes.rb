@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'first', to: 'foundation_lessons#first'
   get 'second', to: 'foundation_lessons#second'
+  get 'third', to: 'foundation_lessons#third'
+  get 'mail', to: 'foundation_lessons#mail'
 
   root 'welcome#index'
 

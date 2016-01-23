@@ -1,5 +1,8 @@
 @import "foundation/settings.scss";
 @import "foundation.scss";
+@import "foundation/foundation-datepicker";
+@import 'motion-src/motion-ui';
+@include motion-ui-transitions;
 
 //$row-width: rem-calc(1300);
 //$column-gutter: rem-calc(30);
@@ -110,6 +113,8 @@ body {
   border: 1px solid red; /* !test */
 }
 
+
+// vertical-dropdown
 .vertical-dropdown {
 
   @media only screen and (min-width: 40.063em) {
@@ -123,3 +128,165 @@ body {
     }
   }
 }
+
+$container_bg: red;
+
+.a_container {
+  background-color: $container_bg;
+}
+
+.a_container {
+  .a_container {
+    background-color: blue;
+  }
+}
+
+@mixin altColor ($test-this-color) {
+  @if (lightness($test-this-color) > 60%)  {
+    color: #000;
+  } @else {
+    color: #fff;
+  }
+
+}
+
+#second {
+  $bg_color: #fff;
+  .bk_white {
+    background-color: $bg_color;
+    @include altColor($bg_color);
+  }
+  .bk_dark {
+    $bg_color: #000;
+    background-color: $bg_color;
+    @include altColor($bg_color);
+  }
+  header {
+    max-width: 100%;
+    background-color: transparent;
+  }
+  .has-form {
+
+    position: absolute;
+    top: 0;
+    left: 6rem; // adjust distance from left here
+    min-width: 14rem; // adjust form width here
+
+    @media only screen and (max-width: 40em) {
+
+      min-width: 10rem;
+      top: 0.5rem;
+
+      .button {
+        height: 1.85rem;
+      }
+    }
+  }
+}
+
+#third {
+  background-color: #ffffff;
+  $sidebar-width: 114px;
+  $nav-color: #333;
+
+  .move-to-right .inner-wrap {
+    -ms-transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    margin-left: $sidebar-width;
+  }
+
+  .inner-wrap {
+    width: auto;
+  }
+
+  .left-off-canvas-menu {
+    -ms-transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    position: fixed;
+    width: 0;
+    height: 100%;
+  }
+
+  .move-to-right .left-off-canvas-menu {
+    width: $sidebar-width;
+  }
+  @media #{$tiny-only} {
+    .inner-wrap {
+      background-color: yellow;
+    }
+  }
+  // animation
+  .button_a {
+    background: blue;
+    width: 100px;
+    transition: background 0.5s ease-in, width 1s linear;
+
+    &:hover {
+      background: red;
+      width: 200px;
+      color: white;
+    }
+  }
+
+}
+
+@mixin keyframes( $animationName )
+{
+  @-webkit-keyframes $animationName {
+    @content;
+  }
+  @-moz-keyframes $animationName {
+    @content;
+  }
+  @-o-keyframes $animationName {
+    @content;
+  }
+  @keyframes $animationName {
+    @content;
+  }
+}
+
+@include keyframes( incrediblehulk )
+{
+  0% {
+    color: #f8d2c0;
+    // you can also use mixins inside this mixin!
+    //@include transform( scale(1) );
+  }
+
+  100% {
+    color: #0f0;
+    //@include transform( scale(3) );
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: blue;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.button_c {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position :relative;
+  //color: red;
+  /*animation: mymove 1s;*/
+  //-webkit-animation: spin 1s ease-in-out 2s infinite;
+  //animation: spin 1s ease-in-out 2s infinite;
+}
+

@@ -3,6 +3,14 @@ class FoundationLessonsController < ApplicationController
 
   def first
   end
+
   def second
+  end
+
+  def third
+  end
+
+  def mail
+    render layout: false
   end
 end

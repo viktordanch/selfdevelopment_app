@@ -1,120 +1,195 @@
+- content_for :body_id do
+  second
 
-
-
-.off-canvas-wrap{"data-offcanvas" => ""}
+-#.off-canvas-wrap{"data-offcanvas" => ""}
+-#  .inner-wrap
+-#    %nav.tab-bar
+-#      %section.left-small
+-#        %a.left-off-canvas-toggle.menu-icon{:href => "#"}
+-#          %span
+-#    %aside.left-off-canvas-menu
+-#      %ul.off-canvas-list
+-#        %li
+-#          %label Foundation
+-#        %li
+-#          %a{:href => "#"} Option 1
+-#        %li
+-#          %a.off-canvas-submenu-call{:href => "#"}
+-#            Option 2
+-#            %span.right +
+-#        %ul.off-canvas-submenu
+-#          %li
+-#            %a{:href => "#"} Sub menu 1
+-#          %li
+-#            %a{:href => "#"} Sub menu 2
+-#          %li
+-#            %a{:href => "#"} Sub menu 3
+-#        %li
+-#          %a{:href => "#"} Option 3
+-#        %li
+-#          %a.off-canvas-submenu-call{:href => "#"}
+-#            Option 4
+-#            %span.right +
+-#        %ul.off-canvas-submenu
+-#          %li
+-#            %a{:href => "#"} Sub menu 1
+-#          %li
+-#            %a{:href => "#"} Sub menu 2
+-#          %li
+-#            %a{:href => "#"} Sub menu 3
+-#        %li
+-#          %a{:href => "#"} Option 5
+-#        %li
+-#          %a{:href => "#"} Option 6
+-#    %section.main-section
+-#      Content
+-#      .bk_white
+-#        Content
+-#        %br/
+-#        Content
+-#        %br/
+-#        Content
+-#        %br/
+-#        Content
+-#      .bk_dark
+-#        Content
+-#        %br/
+-#        Content
+-#        %br/
+-#        Content
+-#        %br/
+-#        Content
+-#        %br/
+-#        Content
+-#      %br/
+-#      Content
+-#      %br/
+-#      Content
+-#      %br/
+-#      Content
+-#      %br/
+-#      Content
+-#
+-#      %br/
+-#      %br/
+-#    %a.exit-off-canvas
+.off-canvas-wrap{ 'data-offcanvas' => '' }
   .inner-wrap
-    %nav.tab-bar
-      %section.left-small
-        %a.left-off-canvas-toggle.menu-icon{:href => "#"}
-          %span
+    %header
+      %nav.top-bar{ 'data-topbar' => '', role: 'navigation' }
+        %ul.title-area
+          %li.name
+            %h2
+              %a.left-off-canvas-toggle.menu-icon{ href: '#' } My Site
+
+          %li.has-form
+            .row.collapse
+              .large-16.small-18.columns
+                %input{ type: "text", placeholder: "Find Stuff" }
+              .large-8.small-6.columns
+                %a.alert.button.expand{ href: "#" } Search
+          %li.toggle-topbar.menu-icon
+            %a{ href: '#' }
+              %span Menu
+        -#%div
+          .top-bar
+          .middle-bar
+          .bottom-bar
+        %section.top-bar-section
+          %ul.right
+            %li.divider
+            %li
+              %a{ href: '#' }
+                Button
+            %li.divider
+            %li
+              %a{ href: '#' }
+                Button
+            %li.divider
+            %li
+              %a{ href: '#' }
+                Button
+            %li.divider
+            %li
+              %a{ href: '#' }
+                Button
+            %li.divider
+            %li
+              %a{ href: '#' }
+                Button
     %aside.left-off-canvas-menu
-      %ul.off-canvas-list
+      %div.row
+        .small-24.columns
+          %img{ src: "https://s-media-cache-ak0.pinimg.com/736x/17/75/19/1775190f158a67c8af7309949353c58d.jpg", alt: "logo" }
+          %form
+            .row.collapse
+              %label Search Our Inventory
+              .small-18.columns
+                %input{ type: "search", placeholder: "find something" }
+              .small-6.columns
+                %span.postfix Search
+          %h4 Shop by Style
+          %ul.small-block-grid-2
+            %li
+              %img{ src: "#", alt: "product photo" }
+              %p Description
+            %li
+              %img{ src: "#", alt: "product photo" }
+              %p Description
+            %li
+              %img{ src: "#", alt: "product photo" }
+              %p Description
+            %li
+              %img{ src: "#", alt: "product photo" }
+              %p Description
+            %li
+              %img{ src: "#", alt: "product photo" }
+              %p Description
+          %h4 Contact Us
+          %ul
+            %li 1-877-000-0000
+            %li furniture@duality.com
+            %li @dualityfurniture
+
+%nav.mega-menu
+  .row.collapse
+    .medium-6.columns
+      %img{ src: asset_path("assets/product.JPG"), alt: "company logo" }
+    .medium-14.columns
+      %ul.button-group.even-3
         %li
-          %label Foundation
+          %a.button{ href: '#',
+                     'data-dropdown'=>"living",
+                     'data-options'=>"is_hover:true; hover_timeout:500" }
+            Living Room Furniture
         %li
-          %a{:href => "#"} Option 1
+          %a.button{ href: '#',
+                     'data-dropdown'=>"bedroom",
+                     'data-options'=>"is_hover:true; hover_timeout:500" }
+            Bedroom Room Furniture
         %li
-          %a.off-canvas-submenu-call{:href => "#"}
-            Option 2
-            %span.right +
-        %ul.off-canvas-submenu
-          %li
-            %a{:href => "#"} Sub menu 1
-          %li
-            %a{:href => "#"} Sub menu 2
-          %li
-            %a{:href => "#"} Sub menu 3
-        %li
-          %a{:href => "#"} Option 3
-        %li
-          %a.off-canvas-submenu-call{:href => "#"}
-            Option 4
-            %span.right +
-        %ul.off-canvas-submenu
-          %li
-            %a{:href => "#"} Sub menu 1
-          %li
-            %a{:href => "#"} Sub menu 2
-          %li
-            %a{:href => "#"} Sub menu 3
-        %li
-          %a{:href => "#"} Option 5
-        %li
-          %a{:href => "#"} Option 6
-    %section.main-section
-      Content
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      %br/
-      Content
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      %br/
-      Content
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      %br/
-      Content
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      %br/
-      Content
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      %br/
-      Content
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      = succeed "Content" do
-        %br/
-      %br/
-      %br/
-    %a.exit-off-canvas
+          %a.button{ href: '#',
+                     'data-dropdown'=>"storage",
+                     'data-options'=>"is_hover:true; hover_timeout:500" }
+            Storage
+            %br
+            Furniture
+
+  .row
+    .small-24.columns
+      #living.f-dropdown.content.mega{ 'data-dropdown-content' => '' }
+        Living Room Content
+      #bedroom.f-dropdown.content.mega{ 'data-dropdown-content' => '' }
+        Bedroom Room Content
+      #storage.f-dropdown.content.mega{ 'data-dropdown-content' => '' }
+        Storage Content
+  .row
+    .small-24.columns
+      First Row
+  #row2.row
+    .small-24.columns
+      Second Row
+
 
 :javascript
   $(document).foundation();
@@ -124,3 +199,9 @@
     $(this).parent().next(".off-canvas-submenu").slideToggle('fast');
     $(this).find("span").text(icon);
   });
+
+  $(document).ready(function () {
+    var row2 = $('#row2');
+    row1 = row2.prev().detach();
+    row1.insertAfter(row2);
+  })

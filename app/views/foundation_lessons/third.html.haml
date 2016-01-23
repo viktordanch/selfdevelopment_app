@@ -1,0 +1,36 @@
+- content_for :body_id do
+  third
+
+
+.move-to-right.off-canvas-wrap{ 'data-offcanvas' => '' }
+  .inner-wrap
+    %a.left-off-canvas-toggle{ href: '#' }
+      MENU
+    %nav.left-off-canvas-menu
+      Off Canvas Menu content
+
+    %main
+      Hello row
+      .row
+        .col-xs-24.columns
+          %form
+            %label{ for: 'startDate' } Fdatepicker Starting Date
+            %input.fdatepicker{ type: "text", name: "startDate", placeholder: "ex. Today's Date : 7/11/2015" }
+
+          -#.fdatepicker
+          %a.button_a{ href: '#' }
+            Default button
+          %br
+          %a.button_b{ href: '#' }
+            Animation
+          .button_c
+            Animation 2
+          .motion-ui
+            %a.button#button Toggle Panel
+
+            .panel#panel
+              %p Lorem ipsum dolor sit amet!
+
+    %a.exit-off-canvas{ href: '#' }
+
+
