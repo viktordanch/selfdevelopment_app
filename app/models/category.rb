@@ -24,4 +24,34 @@ class Category < ActiveRecord::Base
 
     { loaded_rows_count: rows_range.count }
   end
+
+  def self.catalog
+    categories = {}
+    pathes = select("DISTINCT category_path").map(&:category_path)
+
+    pathes.each do |path|
+      path_array = path.split('/')
+      path_array.each_with_index do |sub_category, index|
+        if index == 0
+          categories[path_array[0]] = {} if !categories[path_array[0]]
+        elsif index == 1
+          categories[path_array[0]][path_array[1]] = {} if !categories[path_array[0]][path_array[1]]
+        elsif index == 2
+          categories[path_array[0]][path_array[1]][path_array[2]] = {} if !categories[path_array[0]][path_array[1]][path_array[2]]
+        elsif index == 3
+          categories[path_array[0]][path_array[1]][path_array[2]][path_array[3]] = {} if !categories[path_array[0]][path_array[1]][path_array[2]][path_array[3]]
+        elsif index == 4
+          if !categories[path_array[0]][path_array[1]][path_array[2]][path_array[3]][path_array[4]]
+            categories[path_array[0]][path_array[1]][path_array[2]][path_array[3]][path_array[4]] = {}
+          end
+        elsif index == 5
+          if !categories[path_array[0]][path_array[1]][path_array[2]][path_array[3]][path_array[4]][path_array[5]]
+            categories[path_array[0]][path_array[1]][path_array[2]][path_array[3]][path_array[4]][path_array[5]] = {}
+          end
+        end
+      end
+    end
+
+    categories
+  end
 end

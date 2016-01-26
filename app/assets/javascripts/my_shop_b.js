@@ -46,6 +46,33 @@ requirejs.config({
 });
 
 define(function(require){
+
+  function sideNav() {
+    console.log('sideNav')
+    console.log($(window).width() < 769)
+    if ($(window).width() < 769) {
+      $('.off-canvas-wrap').removeClass('move-right');
+      $('.left-off-canvas-toggle').show();
+    } else {
+      $('.off-canvas-wrap').addClass('move-right');
+      $('.left-off-canvas-toggle').hide();
+    }
+  }
+
+  $(window).resize(function() {
+    sideNav();
+  });
+
+  $(document).ready(function(){
+    sideNav();
+    $(".off-canvas-submenu").hide();
+    $(".off-canvas-submenu-call").click(function() {
+      var icon = $(this).parent().next(".off-canvas-submenu").is(':visible') ? '+' : '-';
+      $(this).parent().next(".off-canvas-submenu").slideToggle('fast');
+      $(this).find("span").text(icon);
+    });
+  });
+
   var Backbone = require('backbone');
   var router = require('my_shop_b_router');
 

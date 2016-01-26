@@ -60,6 +60,8 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 
 gem 'roo', '~> 2.1.0'
 
+gem 'kaminari', '~> 0.16.3'
+
 group :test, :development do
   # code style
   gem 'brakeman', require: false

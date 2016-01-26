@@ -5,6 +5,9 @@ module MyShopB
     layout 'my_shop_b'
 
     def index
+      @catalog = Category.catalog
+      @products = Product.page(params[:page] || 1).per(4)
+
       respond_to do |format|
         format.js { render layout: false }
         format.html

@@ -1,16 +1,32 @@
+- content_for :body_id do
+  catalog
+
 .container
-  %dl.sub-nav
-    %dt Filter:
-    %dd.active
+  %ul.breadcrumbs
+    %li
       %a{ href: '#' } All
-    %dd
-      %a{ href: '#' } Active
-    %dd
-      %a{ href: '#' } Pending
-    %dd.hide-for-small-only
-      %a{ href: '#' } Suspended
+    %li
+      %a{ href: '#' } 1
+    %li
+      %a{ href: '#' } 2
+    %li
+      %a{ href: '#' } 3
   %h1
     Products
-  .row
-    .small-12.column
-      .shopContainer
+  .row.productsList{ 'data-equalizer' => '' }
+    -#.small-12.column
+    -#  .shopContainer
+    - @products.each do |product|
+      .medium-3.columns
+        .panel{ 'data-equalizer-watch'=>"" }
+          %h3= product.product_name
+          %p
+            = product.product_s_desc || 'No description'
+          %p
+            = product.product_price
+          %p
+            = product.product_sku
+          %p
+            = product.product_price
+
+  = paginate @products

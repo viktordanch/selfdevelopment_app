@@ -1,13 +1,42 @@
-@import "icomoon.css";
+//@import "icomoon.css";
 @import "foundation-icons/foundation-icons.css";
 @import "foundation.css";
 @import "viktor/layout";
 
-html, body, .main {
+.row {
+  max-width: 1600px;
+}
+
+#catalog {
+  .main {
+    .row .columns {
+      padding: 0 5px;
+    }
+  }
+}
+
+html, body, .off-canvas-wrap, .inner-wrap, .main {
   height: 100%;
 }
 
+// vertical-dropdown
+.vertical-dropdown {
+
+  @media only screen and (min-width: 40.063em) {
+    .top-bar-section .dropdown {
+      min-width: 400px;
+    }
+
+    .top-bar-section .dropdown li {
+      width: 25%;
+      text-align: center;
+    }
+  }
+}
+
 header {
+  //margin-left: -200px;
+  z-index: 10000;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -22,4 +51,67 @@ footer {
     margin-bottom: 0px;
     padding: 3px;
   }
+}
+
+$sidebar-width: 200px;
+
+.move-right .inner-wrap {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  margin-left: $sidebar-width;
+}
+
+.inner-wrap {
+  width: auto;
+}
+
+.left-off-canvas-menu {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  position: fixed;
+  width: 0;
+  height: 100%;
+  top: 45px;
+}
+
+
+.left-off-canvas-toggle {
+  display: none;
+  transition: all .25s ease-in-out;
+
+  &:focus {
+    color: #333;
+  }
+  &:hover {
+    color: #8c8c8c;
+    transition: all .25s ease-in-out;
+  }
+}
+
+.move-right .left-off-canvas-menu {
+  width: $sidebar-width;
+}
+
+.move-right .exit-off-canvas {
+  display: none;
+}
+
+.off-canvas-submenu {
+  display: none;
+}
+
+.main {
+  overflow: auto;
+}
+
+.productsList [class*="columns"]:last-child{
+  float: left;
 }

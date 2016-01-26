@@ -42,9 +42,12 @@
           %a.close{ href: '#' } &times;
 
     %header
-      %nav.top-bar{ 'data-topbar' => '', role: 'navigation' }
+      %nav.top-bar.vertical-dropdown{ 'data-topbar' => '', role: 'navigation' }
         / Title
         %ul.title-area
+          %li.offcanvas_a
+            %a.left-off-canvas-toggle{ href: '#' }
+              MENU
           %li.name
             %h1
               %a{ href: my_shop_b_root_path }
@@ -75,44 +78,15 @@
             %li
               %a{ href: my_shop_b_orders_path, title: 'My Orders' } My Orders
             %li.divider
-            %li.has-dropdown.not-click
+            %li.has-dropdown
               %a{ href: my_shop_b_products_path, title: 'Catalog' } Catalog
               %ul.dropdown
-                %li.title.back.js-generated
-                  %h5
-                    %a{ href: 'javascript:void(0)' } Back
-                %li.parent-link.hide-for-medium-up
-                  %a.parent-link.js-generated{ href: '#' } Item 1
-                %li
-                  %label Level One
-                %li
-                  %a{ href: my_shop_b_products_path } Sub-item 1
-                %li
-                  %a{ href: my_shop_b_products_path } Sub-item 2
-                %li.divider
-                %li
-                  %a{ href: my_shop_b_products_path } Sub-item 3
-                %li.has-dropdown.not-click
-                  %a{ href: my_shop_b_products_path } Sub-item 4
-                  / Nested Dropdown
-                  %ul.dropdown
-                    %li.title.back.js-generated
-                      %h5
-                        %a{ href: 'javascript:void(0)' } Back
-                    %li.parent-link.hide-for-medium-up
-                      %a.parent-link.js-generated{ href: '#' } Sub-item 4
-                    %li
-                      %label Level Two
-                    %li
-                      %a{ href: my_shop_b_products_path } Sub-item 2
-                    %li
-                      %a{ href: my_shop_b_products_path } Sub-item 3
-                    %li
-                      %a{ href: my_shop_b_products_path } Sub-item 4
-                %li
-                  %a{ href: my_shop_b_products_path } Sub-item 5
+                - Category.catalog.each do |category|
+                  %li
+                    %a{ href: "#" }= category
+
             %li.divider
-            %li.has-form.show-for-large-up
+            %li.has-form
               - if current_user
                 = link_to 'Sign Out', destroy_user_session_path,
                                        method: :delete,
@@ -120,21 +94,86 @@
                                        title: 'Sign Out'
               - else
                 %a.button{ href: user_session_path, title: 'Sign Up' } Sign In
-    .main
-      = yield
 
-    %footer.container.ft
-      .panel
-        %ul.foot-links.inline-list
-          %li
-            %a{ href: my_shop_b_about_us_path, title: 'About Us' } About Us
-          %li
-            %a{ href: my_shop_b_contact_us_path, title: 'Contact Us' } Contact Us
-          %li
-            %a{ href: '#' }
-              &copy; 2012 IKEA, All Rights Reserved
-          %li
-            %a{ href: my_shop_b_term_of_use_path } Terms of Service
+    .move-right.off-canvas-wrap{ 'data-offcanvas' => '' }
+      .inner-wrap
+        .aside.left-off-canvas-menu
+          %ul.off-canvas-list
+            - catalog = Category.catalog
+            - catalog.keys.sort.each do |category|
+              - _catalog = catalog[category]
+              - if _catalog.keys.blank?
+                %li
+                  %a{ href: "#" }= category
+              - else
+                %li
+                  %a.off-canvas-submenu-call{:href => "#"}
+                    = category
+                    %span.right +
+                %ul.off-canvas-submenu
+                  - _catalog.keys.sort.each do |_sub_1|
+                    - _catalog = catalog[category][_sub_1]
+                    - if _catalog.keys.blank?
+                      %li
+                        %a{ href: "#" }= _sub_1
+                    - else
+                      %li
+                        %a.off-canvas-submenu-call{:href => "#"}
+                          = _sub_1
+                          %span.right +
+                      %ul.off-canvas-submenu
+                        - _catalog.keys.sort.each do |_sub_2|
+                          - _catalog = catalog[category][_sub_1][_sub_2]
+                          - if _catalog.keys.blank?
+                            %li
+                              %a{ href: "#" }= _sub_2
+                          - else
+                            %li
+                              %a.off-canvas-submenu-call{:href => "#"}
+                                = _sub_2
+                                %span.right +
+                            %ul.off-canvas-submenu
+                              - _catalog.keys.sort.each do |_sub_3|
+                                - _catalog = catalog[category][_sub_1][_sub_2][_sub_3]
+                                - if _catalog.keys.blank?
+                                  %li
+                                    %a{ href: "#" }= _sub_3
+                                - else
+                                  %li
+                                    %a.off-canvas-submenu-call{:href => "#"}
+                                      = _sub_3
+                                      %span.right +
+                                  %ul.off-canvas-submenu
+                                    - _catalog.keys.sort.each do |_sub_4|
+                                      - _catalog = catalog[category][_sub_1][_sub_2][_sub_3][_sub_4]
+                                      - if _catalog.keys.blank?
+                                        %li
+                                          %a{ href: "#" }= _sub_4
+                                      - else
+                                        %li
+                                          %a.off-canvas-submenu-call{:href => "#"}
+                                            = _sub_4
+                                            %span.right +
+                                        %ul.off-canvas-submenu
+                                          - _catalog.keys.sort.each do |_sub_5|
+                                            %li
+                                              %a{ href: "#" }= _sub_3
+        %a.exit-off-canvas
+        .main
+          = yield
+
+        %footer.container.ft
+          .panel
+            %ul.foot-links.inline-list
+              %li
+                %a{ href: my_shop_b_about_us_path, title: 'About Us' } About Us
+              %li
+                %a{ href: my_shop_b_contact_us_path, title: 'Contact Us' } Contact Us
+              %li
+                %a{ href: '#' }
+                  &copy; 2012 IKEA, All Rights Reserved
+              %li
+                %a{ href: my_shop_b_term_of_use_path } Terms of Service
 
     = requirejs_include_tag 'my_shop_b'
     = javascript_include_tag('application')
