@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112194939) do
+ActiveRecord::Schema.define(version: 20160127044329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20160112194939) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "cart_id"
+  end
+
+  add_index "carts_products", ["cart_id"], name: "index_carts_products_on_cart_id", using: :btree
+  add_index "carts_products", ["product_id"], name: "index_carts_products_on_product_id", using: :btree
+
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
     t.string   "category_path"
@@ -62,6 +75,22 @@ ActiveRecord::Schema.define(version: 20160112194939) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "orders_products", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+  end
+
+  add_index "orders_products", ["order_id"], name: "index_orders_products_on_order_id", using: :btree
+  add_index "orders_products", ["product_id"], name: "index_orders_products_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "product_sku"
@@ -108,5 +137,10 @@ ActiveRecord::Schema.define(version: 20160112194939) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "carts_products", "carts"
+  add_foreign_key "carts_products", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "orders_products", "orders"
+  add_foreign_key "orders_products", "products"
   add_foreign_key "sections", "departments"
 end

@@ -62,25 +62,49 @@ define(function(require){
     sideNav();
   });
 
+  $(document).on('click', '.addToCart', function(e){
+    var $el = $(e.target).is('a') ? $(e.target) : $(e.target).parents('a');
+    var product_id = $el.data('productid');
+    console.log('add to cart');
+    console.log(product_id);
+
+    $.ajax({
+      url: '/my_shop_b/cart/add_product',
+      type: 'POST',
+      data: { product_id: product_id }
+    }).then(function (data) {
+      console.log('success')
+      console.log(data)
+    }).fail(function (response) {
+      console.log('fail')
+      console.log(response)
+    })
+    return false;
+  });
+
   $(document).on('click', '.asideProductMenu .productLink, .topProductMenu .productLink', function(e){
-    var productsLayout = require('text!./templates/productsLayout.handlebars');
-    var precompiledTemplates = require('precompiledTemplates');
-
-    var precompiledProductsLayout = precompiledTemplates.getTemplates(productsLayout, 'list_template');
-
     var $el = $(e.target);
-    if (!$el.is('a')) {
-      return false
+
+    if(location.pathname.match(/\/products/)) {
+      var productsLayout = require('text!./templates/productsLayout.handlebars');
+      var precompiledTemplates = require('precompiledTemplates');
+      var precompiledProductsLayout = precompiledTemplates.getTemplates(productsLayout, 'list_template');
+
+      if (!$el.is('a')) {
+        return false
+      } else {
+        $.get($el.attr('href')).then(function (data) {
+          console.log(data)
+          $('.productsList').html('')
+          var precompiledProductsLayout = precompiledProductsLayout;
+        }).fail(function (data) {
+          var parsedDate = JSON.parse(data.responseText);
+          $('.productsList').html(precompiledProductsLayout(parsedDate));
+          console.log(data)
+        }.bind(this));
+      }
     } else {
-      $.get($el.attr('href')).then(function (data) {
-        console.log(data)
-        $('.productsList').html('')
-        var precompiledProductsLayout = precompiledProductsLayout;
-      }).fail(function (data) {
-        var parsedDate = JSON.parse(data.responseText);
-        $('.productsList').html(precompiledProductsLayout(parsedDate));
-        console.log(data)
-      }.bind(this));
+      location = $el.attr('href');
     }
     return false
   });

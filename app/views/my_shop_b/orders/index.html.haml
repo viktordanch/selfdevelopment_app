@@ -3,4 +3,14 @@
     Orders
   .row
     .small-12.column
-      .shopContainer
+      - if @orders.count > 0
+        - @orders.each do |order|
+          .order_item
+            = order.id
+            %h4 products
+            %ul
+            - order.products.each do |product|
+              %li
+                = product.product_name
+      - else
+        No Orders

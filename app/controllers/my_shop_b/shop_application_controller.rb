@@ -2,6 +2,8 @@
 module MyShopB
   # CartController
   class ShopApplicationController < ApplicationController
+
+    before_action :cart
     # def set_locale
     #   # I18n.locale = params[:locale]
     #   I18n.locale = params[:locale]
@@ -11,7 +13,17 @@ module MyShopB
     #   options.merge({ :locale => I18n.locale })
     # end
 
+
     protected
+
+    def cart
+      @cart = Cart.find_by_id(session[:cart_id])
+
+      unless @cart
+        @cart = Cart.create
+        session[:cart_id] = @cart.id
+      end
+    end
 
     def authenticate_user!
       if user_signed_in?

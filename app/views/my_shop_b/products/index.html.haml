@@ -28,5 +28,9 @@
             = product.product_price
           %p
             = product.product_sku
+          %p
+            = link_to 'Detail', my_shop_b_product_path(product), class: 'button'
+          %p
+            = link_to 'Add to cart', '#', class: 'button addToCart', data: { productid: product.id }
 
   = paginate @products

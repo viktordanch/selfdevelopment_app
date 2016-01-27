@@ -28,6 +28,10 @@ module MyShopB
       end
     end
 
+    def show
+      @product   = Product.find_by_id(params[:id])
+    end
+
     def list
       books = [1, 2, 3, 4].map do |n|
         { title: "book #{n}",

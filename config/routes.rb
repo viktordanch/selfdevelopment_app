@@ -17,10 +17,12 @@ Rails.application.routes.draw do
     get '/about_us', to: 'index#about_us'
     get '/contact_us', to: 'index#contact_us'
     get '/term_of_use', to: 'index#term_of_use'
-    resources :orders, only: [:index]
-    resources :cart, only: [:index]
+    resources :orders, only: [:index, :create]
+    resources :cart, only: [:index] do
+      post '/add_product', to: 'cart#add_product', on: :collection
+    end
 
-    resources :products, only: [:index] do
+    resources :products, only: [:index, :show] do
       get '/list', to: 'products#list', on: :collection
     end
   end

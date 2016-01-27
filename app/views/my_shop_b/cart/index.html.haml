@@ -3,4 +3,16 @@
     Cart
   .row
     .small-12.column
-      .shopContainer
+      - if @cart.products.count > 0
+        - @cart.products.each do |product|
+          .productItem
+            = product.product_name
+
+        - if current_user
+          = link_to 'Create Order', my_shop_b_orders_path, method: 'post', class: 'button'
+        - else
+          -#= link_to 'Create Order', '#', class: 'button', 'data-reveal-id' => 'myModal'
+          = link_to 'Create Order', new_user_session_path, class: 'button'
+
+      - else
+        Cart is empty

@@ -184,6 +184,12 @@
               %li
                 %a{ href: my_shop_b_term_of_use_path } Terms of Service
 
+        #myModal.reveal-modal{"aria-hidden" => "true", "aria-labelledby" => "modalTitle", "data-reveal" => "", :role => "dialog"}
+          #modalTitle Modal
+          .modal-body
+            Body
+          %a.close-reveal-modal{"aria-label" => "Close"} ×
+
     = requirejs_include_tag 'my_shop_b'
     = javascript_include_tag('application')
 
