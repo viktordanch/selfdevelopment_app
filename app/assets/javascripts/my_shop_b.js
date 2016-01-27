@@ -46,7 +46,6 @@ requirejs.config({
 });
 
 define(function(require){
-
   function sideNav() {
     console.log('sideNav')
     console.log($(window).width() < 769)
@@ -61,6 +60,29 @@ define(function(require){
 
   $(window).resize(function() {
     sideNav();
+  });
+
+  $(document).on('click', '.asideProductMenu .productLink, .topProductMenu .productLink', function(e){
+    var productsLayout = require('text!./templates/productsLayout.handlebars');
+    var precompiledTemplates = require('precompiledTemplates');
+
+    var precompiledProductsLayout = precompiledTemplates.getTemplates(productsLayout, 'list_template');
+
+    var $el = $(e.target);
+    if (!$el.is('a')) {
+      return false
+    } else {
+      $.get($el.attr('href')).then(function (data) {
+        console.log(data)
+        $('.productsList').html('')
+        var precompiledProductsLayout = precompiledProductsLayout;
+      }).fail(function (data) {
+        var parsedDate = JSON.parse(data.responseText);
+        $('.productsList').html(precompiledProductsLayout(parsedDate));
+        console.log(data)
+      }.bind(this));
+    }
+    return false
   });
 
   $(document).ready(function(){

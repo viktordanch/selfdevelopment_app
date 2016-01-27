@@ -23,10 +23,10 @@
           %p
             = product.product_s_desc || 'No description'
           %p
+            = product.category_path
+          %p
             = product.product_price
           %p
             = product.product_sku
-          %p
-            = product.product_price
 
   = paginate @products

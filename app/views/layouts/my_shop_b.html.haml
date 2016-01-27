@@ -70,7 +70,7 @@
                     %i.fi-magnifying-glass
 
           / Top Bar Right Nav Elements
-          %ul.right
+          %ul.right.topProductMenu
             %li.divider
             %li
               %a{ href: my_shop_b_cart_index_path, title: 'My Cart' } My Cart
@@ -81,9 +81,9 @@
             %li.has-dropdown
               %a{ href: my_shop_b_products_path, title: 'Catalog' } Catalog
               %ul.dropdown
-                - Category.catalog.each do |category|
+                - Category.catalog.each do |category, value|
                   %li
-                    %a{ href: "#" }= category
+                    %a.productLink{ href: "#{my_shop_b_products_path}?category=#{category + '/'}" }= category
 
             %li.divider
             %li.has-form
@@ -97,67 +97,76 @@
 
     .move-right.off-canvas-wrap{ 'data-offcanvas' => '' }
       .inner-wrap
-        .aside.left-off-canvas-menu
+        .aside.asideProductMenu.left-off-canvas-menu
           %ul.off-canvas-list
             - catalog = Category.catalog
             - catalog.keys.sort.each do |category|
               - _catalog = catalog[category]
+              - url = "#{category}/"
               - if _catalog.keys.blank?
                 %li
-                  %a{ href: "#" }= category
+                  %a.productLink{ href: "#{my_shop_b_products}?category=#{url}" }= category
               - else
                 %li
-                  %a.off-canvas-submenu-call{:href => "#"}
+                  %a.productLink.off-canvas-submenu-call{ href: "#{my_shop_b_products_path}?category=#{url}" }
                     = category
                     %span.right +
                 %ul.off-canvas-submenu
                   - _catalog.keys.sort.each do |_sub_1|
                     - _catalog = catalog[category][_sub_1]
+                    - url = "#{category}/#{_sub_1}"
                     - if _catalog.keys.blank?
                       %li
-                        %a{ href: "#" }= _sub_1
+                        %a.productLink{ href: "#{my_shop_b_products_path}?category=#{url}" }= _sub_1
                     - else
                       %li
-                        %a.off-canvas-submenu-call{:href => "#"}
+                        %a.productLink.off-canvas-submenu-call{ href: "#{my_shop_b_products_path}?category=#{url}" }
                           = _sub_1
                           %span.right +
                       %ul.off-canvas-submenu
                         - _catalog.keys.sort.each do |_sub_2|
                           - _catalog = catalog[category][_sub_1][_sub_2]
+                          - url = "#{category}/#{_sub_1}/#{_sub_2}"
                           - if _catalog.keys.blank?
                             %li
-                              %a{ href: "#" }= _sub_2
+                              %a.productLink{ href: "#{my_shop_b_products_path}?category=#{url}" }
+                                = _sub_2
                           - else
                             %li
-                              %a.off-canvas-submenu-call{:href => "#"}
+                              %a.productLink.off-canvas-submenu-call{ href: "#{my_shop_b_products_path}?category=#{url}" }
                                 = _sub_2
                                 %span.right +
                             %ul.off-canvas-submenu
                               - _catalog.keys.sort.each do |_sub_3|
                                 - _catalog = catalog[category][_sub_1][_sub_2][_sub_3]
+                                - url = "#{category}/#{_sub_1}/#{_sub_2}/#{_sub_3}"
                                 - if _catalog.keys.blank?
                                   %li
-                                    %a{ href: "#" }= _sub_3
+                                    %a.productLink{ href: "#{my_shop_b_products_path}?category=#{url}" }= _sub_3
                                 - else
                                   %li
-                                    %a.off-canvas-submenu-call{:href => "#"}
+                                    %a.productLink.off-canvas-submenu-call{ href: "#{my_shop_b_products_path}?category=#{url}" }
                                       = _sub_3
                                       %span.right +
                                   %ul.off-canvas-submenu
                                     - _catalog.keys.sort.each do |_sub_4|
                                       - _catalog = catalog[category][_sub_1][_sub_2][_sub_3][_sub_4]
+                                      - url = "#{category}/#{_sub_1}/#{_sub_2}/#{_sub_3}/#{_sub_4}"
                                       - if _catalog.keys.blank?
                                         %li
-                                          %a{ href: "#" }= _sub_4
+                                          %a.productLink{ href: "#{my_shop_b_products_path}?category=#{url}" }
+                                            = _sub_4
                                       - else
                                         %li
-                                          %a.off-canvas-submenu-call{:href => "#"}
+                                          %a.productLink.off-canvas-submenu-call{ href: "#{my_shop_b_products_path}?category=#{url}" }
                                             = _sub_4
                                             %span.right +
                                         %ul.off-canvas-submenu
                                           - _catalog.keys.sort.each do |_sub_5|
+                                            - url = "#{category}/#{_sub_1}/#{_sub_2}/#{_sub_3}/#{_sub_4}/#{_sub_5}"
                                             %li
-                                              %a{ href: "#" }= _sub_3
+                                              %a.productLink{ href: "#{my_shop_b_products_path}?category=#{url}" }
+                                              = _sub_5
         %a.exit-off-canvas
         .main
           = yield
