@@ -62,6 +62,12 @@ gem 'roo', '~> 2.1.0'
 
 gem 'kaminari', '~> 0.16.3'
 
+gem 'paperclip', '~> 4.3', '>= 4.3.2'
+
+gem 'aws-sdk', '< 2.0'
+
+gem 'rubyzip', '~> 1.1', '>= 1.1.7'
+
 group :test, :development do
   # code style
   gem 'brakeman', require: false
