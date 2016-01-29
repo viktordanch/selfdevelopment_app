@@ -1,5 +1,9 @@
 class Category < ActiveRecord::Base
 
+  def to_s
+    "#{category_name} || #{category_path}"
+  end
+
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
       when ".csv" then Roo::CSV.new(file.path, csv_options: {col_sep: "^"})

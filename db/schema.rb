@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129035411) do
+ActiveRecord::Schema.define(version: 20160129191308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,10 +87,19 @@ ActiveRecord::Schema.define(version: 20160129035411) do
   create_table "orders_products", force: :cascade do |t|
     t.integer "order_id"
     t.integer "product_id"
+    t.integer "count"
   end
 
   add_index "orders_products", ["order_id"], name: "index_orders_products_on_order_id", using: :btree
   add_index "orders_products", ["product_id"], name: "index_orders_products_on_product_id", using: :btree
+
+  create_table "orders_statuses", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "status_id"
+  end
+
+  add_index "orders_statuses", ["order_id"], name: "index_orders_statuses_on_order_id", using: :btree
+  add_index "orders_statuses", ["status_id"], name: "index_orders_statuses_on_status_id", using: :btree
 
   create_table "product_images", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -127,6 +136,12 @@ ActiveRecord::Schema.define(version: 20160129035411) do
 
   add_index "sections", ["department_id"], name: "index_sections_on_department_id", using: :btree
 
+  create_table "statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -154,6 +169,8 @@ ActiveRecord::Schema.define(version: 20160129035411) do
   add_foreign_key "orders", "users"
   add_foreign_key "orders_products", "orders"
   add_foreign_key "orders_products", "products"
+  add_foreign_key "orders_statuses", "orders"
+  add_foreign_key "orders_statuses", "statuses"
   add_foreign_key "product_images", "products"
   add_foreign_key "sections", "departments"
 end

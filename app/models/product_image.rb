@@ -1,4 +1,9 @@
 class ProductImage < ActiveRecord::Base
+
+  def to_s
+    "#{image}"
+  end
+
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :image, default_url: '/system/missing.png',
                             url: "/system/:attachment/:style_:basename.:extension",

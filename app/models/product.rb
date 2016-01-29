@@ -2,6 +2,10 @@ class Product < ActiveRecord::Base
   belongs_to :category, foreign_key: :category_path, primary_key: 'category_path'
   has_many :product_images
 
+  def to_s
+    "#{product_name} || #{product_sku}"
+  end
+
   def self.open_spreadsheet(file)
 
     case File.extname(file.original_filename)
