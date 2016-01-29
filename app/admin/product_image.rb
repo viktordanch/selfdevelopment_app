@@ -21,6 +21,8 @@ ActiveAdmin.register ProductImage do
 
   form do |f|
     f.inputs "Project Details" do
+      f.input :product_id, label: 'Product', as: :select,
+              collection: Product.all.map{|p| ["#{p.product_name}, #{p.product_sku}", p.id]}
       f.input :image, :as => :file , :hint => f.template.image_tag(f.object.image.url(:thumb))
       # Will preview the image when the object is edited
     end

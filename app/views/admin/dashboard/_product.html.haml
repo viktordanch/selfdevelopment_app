@@ -25,3 +25,11 @@
     %br
     = submit_tag "Import"
 
+%h2
+  Import Image Zip
+
+  = semantic_form_for :dashboard, url: { action: :import_images }, html: { multipart: true } do |f|
+    = file_field_tag :zip
+    %br
+    = submit_tag "Import"
+

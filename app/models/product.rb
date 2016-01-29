@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  belongs_to :section
+  belongs_to :category, foreign_key: :category_path, primary_key: 'category_path'
   has_many :product_images
 
   def self.open_spreadsheet(file)

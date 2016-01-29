@@ -4,12 +4,6 @@ ActiveAdmin.register_page 'Dashboard' do
   menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
 
   content title: proc { I18n.t('active_admin.dashboard') } do
-    div class: 'blank_slate_container', id: 'dashboard_default_message' do
-      span class: 'blank_slate' do
-        span I18n.t('active_admin.dashboard_welcome.welcome')
-        small I18n.t('active_admin.dashboard_welcome.call_to_action')
-      end
-    end
 
     section "Search Links", :priority => 1 do
       div do
@@ -91,6 +85,56 @@ ActiveAdmin.register_page 'Dashboard' do
     rescue => ex
       notification = { alert: (notification || '') + "error to load #{ex.message}" }
     end
+
+    redirect_to :back, notification
+  end
+
+  page_action :import_images, method: :post do
+
+    count = 0
+    names = []
+    no_products = []
+
+    zip = params[:zip]
+    dir = File.join(Rails.root,"public","events","temp",current_user.email)
+    FileUtils.mkdir_p(dir)
+
+    begin
+      Zip::File.open(zip.path).each do |entry|
+        # entry is a Zip::Entry
+        filename = File.join(dir,entry.name)
+        logger.debug "will extract file to #{filename} to"
+        entry.extract(filename)
+        p = File.new(filename)
+        # ProductImage.create!(image: p)
+        image_name = filename.split('/').last
+        count += 1
+        names << filename.split('/').last
+
+        product = Product.find_by_product_sku(image_name.split('.').first.split('_').first)
+        product_image = ProductImage.create!(image: p)
+        #
+        if product
+          product.product_images << product_image
+          product.save
+        else
+          no_products << image_name
+        end
+
+        p.close
+        FileUtils.remove_file(filename)
+      end
+
+      zip.close
+      FileUtils.remove_file(zip.path)
+
+    rescue => ex
+      notification = { alert: (notification || '') + "error to load #{ex.message}" }
+      zip.close
+      FileUtils.remove_file(zip.path)
+    end
+
+    notification = { notice: "Ok #{count} #{names.join(' ')} \n No found products: #{no_products.join(', ')}" }
 
     redirect_to :back, notification
   end
