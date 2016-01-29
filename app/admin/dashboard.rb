@@ -96,7 +96,7 @@ ActiveAdmin.register_page 'Dashboard' do
     no_products = []
 
     zip = params[:zip]
-    dir = File.join(Rails.root,"public","events","temp",current_user.email)
+    dir = File.join(Rails.root,"public","events","temp", Time.now.to_s)
     FileUtils.mkdir_p(dir)
 
     begin
